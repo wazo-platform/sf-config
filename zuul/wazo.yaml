@@ -1,0 +1,6 @@
+- tenant:
+    name: 'local'
+    source:
+      github:
+        untrusted-projects:
+          - wazo-pbx/test-repo
