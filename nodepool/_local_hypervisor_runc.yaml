@@ -1,1 +1,16 @@
 # This file is managed by sfconfig, do not edit manually
+
+labels:
+  - name: runc-centos
+    min-ready: 2
+
+providers:
+  - name: managed-runc-provider
+    driver: runc
+    pools:
+      - name: managesf.zuul.wazo.community
+        max-servers: 10
+        labels:
+          - name: runc-centos
+            username: zuul-worker
+
