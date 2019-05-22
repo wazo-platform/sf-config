@@ -14,6 +14,7 @@
     mkdir -p {{ target_dir }}
     tar -C {{ target_dir }} -xzf {{ target_dir }}-cache/$(python -c "import json; print(json.load(open('{{ target_dir }}-cache/manifest.json'))['layers'][0]['digest'].split(':')[1])")
     cp /etc/resolv.conf /srv/{{ debian_version }}/etc/resolv.conf
+    {{ bwrap_command }} apt-get update -y
     {{ bwrap_command }} apt-get install -y openssh-server
     rm -Rf {{ target_dir }}-cache
   args:
