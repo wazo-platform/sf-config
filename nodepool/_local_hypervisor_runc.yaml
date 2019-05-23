@@ -1,7 +1,7 @@
 # This file is managed by sfconfig, do not edit manually
 
 labels:
-  - name: runc-debian
+  - name: runc-centos
     min-ready: 2
 
 providers:
@@ -11,6 +11,6 @@ providers:
       - name: managesf.zuul.wazo.community
         max-servers: 10
         labels:
-          - name: runc-debian
+          - name: runc-centos
             username: zuul-worker
 
