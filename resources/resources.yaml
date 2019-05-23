@@ -18,5 +18,4 @@ resources:
       description: "Wazo Platform"
       connection: github.com
       source-repositories:
-        - wazo-pbx/test-repo:
-	    zuul/exclude-unprotected-branches: true
+        - wazo-pbx/test-repo
