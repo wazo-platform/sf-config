@@ -47,9 +47,10 @@
 
 - name: Adds ssh key
   copy:
-    src: /var/lib/software-factory/bootstrap-data/ssh_keys/zuul_worker_rsa.pub
+    src: /var/lib/software-factory/bootstrap-data/ssh_keys/zuul_rsa.pub
     dest: "{{ target_dir }}/home/zuul-worker/.ssh/authorized_keys"
     owner: zuul-worker
+    mode: 0600
 
 - name: Ensure src dir exists
   file:
