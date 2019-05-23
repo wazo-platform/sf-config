@@ -11,13 +11,15 @@
   shell: |
     set -ex
     skopeo copy docker://debian:{{ debian_version }} dir:{{ target_dir }}-cache
+    rm -rf {{ target_dir }}
     mkdir -p {{ target_dir }}
     tar -C {{ target_dir }} -xzf {{ target_dir }}-cache/$(python -c "import json; print(json.load(open('{{ target_dir }}-cache/manifest.json'))['layers'][0]['digest'].split(':')[1])")
     cp /etc/resolv.conf /srv/{{ debian_version }}/etc/resolv.conf
-    {{ bwrap_command }} /bin/bash -lc "apt install -y --allow-unauthenticated gnupg2"
+    {{ bwrap_command }} /bin/bash -lc "apt install -y --allow-unauthenticated gpgv"
     {{ bwrap_command }} /bin/bash -lc "rm -rf /var/lib/apt/lists/* /usr/share/dbus-1/system-services/org.freedesktop.systemd1.service.systemd"
     {{ bwrap_command }} /bin/bash -lc "apt-get update -y"
-    {{ bwrap_command }} /bin/bash -lc "apt-get install -y openssh-server rsync iproute git python3-pip traceroute libpq-dev"
+    {{ bwrap_command }} /bin/bash -lc "apt-get install -y openssh-server rsync iproute git python3-pip traceroute libpq-dev python2.7 libpython2.7-dev"
+    {{ bwrap_command }} /bin/bash -lc "ln -s /usr/bin/python2.7 /usr/bin/python2"
     {{ bwrap_command }} /bin/bash -lc "pip3 install tox"
     {{ bwrap_command }} /bin/bash -lc "ln -s /usr/sbin/sshd /sbin/sshd"
     rm -Rf {{ target_dir }}-cache
@@ -25,7 +27,7 @@
     creates: "{{ target_dir }}/sbin/sshd"
 
 - name: Create sshd server keys
-  command: "{{ bwrap_command }} /usr/libexec/openssh/sshd-keygen rsa"
+  command: "{{ bwrap_command }} /bin/bash -lc '/usr/libexec/openssh/sshd-keygen rsa'"
   args:
     creates: "{{ target_dir }}/etc/ssh/ssh_host_rsa_key"
 
@@ -34,7 +36,7 @@
   register: _host_uid
 
 - name: Create zuul-worker user
-  command: "{{ bwrap_command }} useradd -u {{ _host_uid.stdout }} -m zuul-worker"
+  command: '{{ bwrap_command }} /bin/bash -lc "useradd -u {{ _host_uid.stdout }} -m zuul-worker -s /bin/bash && sed -i \"s/zuul-worker:!:/zuul-worker:*:/\" /etc/shadow"'
   args:
     creates: "{{ target_dir }}/home/zuul-worker"
 
