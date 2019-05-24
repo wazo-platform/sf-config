@@ -31,7 +31,7 @@
 #            diskimage: dib-centos-7
 
 providers:
-  - name: default
+  - name: openstack
     cloud: openstack
     clean-floating-ips: true
     image-name-format: '{image_name}-{timestamp}'
