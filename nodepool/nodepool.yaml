@@ -30,6 +30,10 @@
 #            min-ram: 1024
 #            diskimage: dib-centos-7
 
+labels:
+  - name: debian9-vm
+    min-ready: 1
+
 extra-labels:
   - provider: openstack
     pool: main
@@ -38,5 +42,5 @@ extra-labels:
     labels:
       - name: debian9-vm
         cloud-image: a992d22d-fbb8-49a8-9282-46e9d75a7fa1
-        min-ready: 1
+        min-ram: 2048
         max-servers: 2
