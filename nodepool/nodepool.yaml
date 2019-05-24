@@ -39,17 +39,17 @@ providers:
     rate: 10.0
     pools:
       - name: main
-        max-servers: 2
-        flavor-name: m1.small
+        max-servers: 2       
         networks:
           - zuul-net
-        labels:
-          - name: debian9-vm
-            min-ram: 2048
+#        labels:
+#          - name: debian9-vm
+#            min-ram: 2048
+#            flavor-name: m1.small
 
 labels:
   - name: debian9-vm
-    min-ready: 1
+    min-ready: 0
 
 extra-labels:
   - provider: openstack
