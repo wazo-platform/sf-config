@@ -19,3 +19,4 @@ resources:
       connection: github.com
       source-repositories:
         - wazo-pbx/test-repo
+        - wazo-pbx/wazo-webhookd
