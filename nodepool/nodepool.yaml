@@ -30,6 +30,22 @@
 #            min-ram: 1024
 #            diskimage: dib-centos-7
 
+providers:
+  - name: default
+    cloud: openstack
+    clean-floating-ips: true
+    image-name-format: '{image_name}-{timestamp}'
+    boot-timeout: 120
+    rate: 10.0
+    pools:
+      - name: main
+        max-servers: 2
+        networks:
+          - zuul-net
+        labels:
+          - name: debian9-vm
+            min-ram: 2048
+
 labels:
   - name: debian9-vm
     min-ready: 1
@@ -42,5 +58,3 @@ extra-labels:
     labels:
       - name: debian9-vm
         cloud-image: a992d22d-fbb8-49a8-9282-46e9d75a7fa1
-        min-ram: 2048
-        max-servers: 2
