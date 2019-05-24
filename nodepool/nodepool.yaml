@@ -42,10 +42,9 @@ providers:
         max-servers: 2       
         networks:
           - zuul-net
-#        labels:
-#          - name: debian9-vm
-#            min-ram: 2048
-#            flavor-name: m1.small
+        labels:
+          - name: debian9-vm
+            flavor-name: m1.small
 
 labels:
   - name: debian9-vm
@@ -55,7 +54,8 @@ extra-labels:
   - provider: openstack
     pool: main
     cloud-images:
-      - name: a992d22d-fbb8-49a8-9282-46e9d75a7fa1
+      - name: debian9
+        image-name: a992d22d-fbb8-49a8-9282-46e9d75a7fa1
     labels:
       - name: debian9-vm
-        cloud-image: a992d22d-fbb8-49a8-9282-46e9d75a7fa1
+        cloud-image: debian9
