@@ -45,6 +45,8 @@ providers:
         labels:
           - name: debian9-vm
             flavor-name: m1.small
+            key-name: zuulkey
+            cloud-image: debian9
 
 labels:
   - name: debian9-vm
@@ -58,4 +60,4 @@ extra-labels:
         image-name: a992d22d-fbb8-49a8-9282-46e9d75a7fa1
     labels:
       - name: debian9-vm
-        cloud-image: debian9
+  
