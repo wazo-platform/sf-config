@@ -46,13 +46,15 @@
     state: directory
     mode: 0700
     owner: zuul-worker
+    group: zuul-worker
 
 - name: Adds ssh key
   copy:
     src: /var/lib/software-factory/bootstrap-data/ssh_keys/zuul_rsa.pub
     dest: "{{ target_dir }}/home/zuul-worker/.ssh/authorized_keys"
-    owner: zuul-worker
     mode: 0600
+    owner: zuul-worker
+    group: zuul-worker
 
 - name: Ensure src dir exists
   file:
