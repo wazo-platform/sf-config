@@ -29,6 +29,16 @@
 #          - name: dib-centos-7
 #            min-ram: 1024
 #            diskimage: dib-centos-7
+diskimages:
+  - name: debian-9-cloud
+    pause: False
+    rebuild-age: 86400
+    elements:
+      - debian-9-cloud
+      - nodepool-minimal
+      - sf-zuul-worker
+    release: stretch
+    username: zuul-worker
 
 providers:
   - name: openstack
@@ -45,8 +55,9 @@ providers:
         labels:
           - name: debian9-vm
             flavor-name: m1.small
-            key-name: zuulkey
-            cloud-image: debian9
+            diskimage: debian-9-cloud
+            #key-name: zuulkey
+            #cloud-image: debian9
 
 labels:
   - name: debian9-vm
@@ -55,10 +66,12 @@ labels:
 extra-labels:
   - provider: openstack
     pool: main
-    cloud-images:
-      - name: debian9
-        image-id: 2f7a3f33-34b2-4278-a914-bb4ce8f461a3
-        username: debian
+    diskimages:
+      - name: debian-9-cloud
+    #cloud-images:
+    #  - name: debian9
+    #    image-id: 2f7a3f33-34b2-4278-a914-bb4ce8f461a3
+    #    username: debian
     labels:
       - name: debian9-vm
   
