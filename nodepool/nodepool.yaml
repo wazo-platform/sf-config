@@ -57,7 +57,8 @@ extra-labels:
     pool: main
     cloud-images:
       - name: debian9
-        image-name: a992d22d-fbb8-49a8-9282-46e9d75a7fa1
+        image-id: 2f7a3f33-34b2-4278-a914-bb4ce8f461a3
+        username: debian
     labels:
       - name: debian9-vm
   
