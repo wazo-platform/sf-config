@@ -18,7 +18,7 @@
     {{ bwrap_command }} /bin/bash -lc "apt install -y --allow-unauthenticated gpgv"
     {{ bwrap_command }} /bin/bash -lc "rm -rf /var/lib/apt/lists/* /usr/share/dbus-1/system-services/org.freedesktop.systemd1.service.systemd"
     {{ bwrap_command }} /bin/bash -lc "apt-get update -y"
-    {{ bwrap_command }} /bin/bash -lc "apt-get install -y openssh-server rsync iproute git python3-pip traceroute libpq-dev python2.7 libpython2.7-dev python-pkg-resources python3.5 libpython3.5-dev python3-pkg-resources sudo"
+    {{ bwrap_command }} /bin/bash -lc "apt-get install -y openssh-server rsync iproute git python3-pip traceroute libpq-dev python2.7 libpython2.7-dev python-pkg-resources python3.5 libpython3.5-dev python3-pkg-resources"
     {{ bwrap_command }} /bin/bash -lc "ln -sf /usr/bin/python2.7 /usr/bin/python2"
     {{ bwrap_command }} /bin/bash -lc "pip3 install tox"
     {{ bwrap_command }} /bin/bash -lc "ln -sf /usr/sbin/sshd /sbin/sshd"
