@@ -8,43 +8,25 @@
     image_cache_dir: "/var/cache/nodepool"
     image_tmp_dir: "/var/tmp/{{ image_output | basename }}"
     extra_packages:
-      # For validate-host and prepare-workspace
-      - traceroute
+      - openssh-server
+      - rsync
       - iproute
       - git
-      - rsync
-      # Extra system tools
-      - pigz
-      - bridge-utils
-      - wget
-      - unzip
-      # Basic CI tools
-      - make
-      - gcc
-      - patch
-      # RPM building tools
-      - gnupg2
-      - expect
-      # Devel libraries
-      - libffi-dev
-      - libpcap-dev
-      - libseccomp-dev
-      - libxml2-dev
-      - libxslt-dev
-      - libmariadb-dev
-      - libldap2-devel
-      - libssl-dev
-      - python-dev
-      - python3-dev
-      - libreadline-dev
-      - ruby-dev
-      - libsystemd-dev
-      - zlib1g-devel
-      # Python
-      - python-yaml
-      - python3-yaml
-      - python-virtualenv
-      - python3-virtualenv
+      - virtualenv
+      - python-pip
+      - python3-pip
+      - traceroute
+      - libpq-dev
+      - python2.7
+      - libpython2.7-dev
+      - python-pkg-resources
+      - python3.5
+      - libpython3.5-dev
+      - python3-pkg-resources
+      - sudo
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
   tasks:
     - name: Ensure libvirt is started
       service:
@@ -62,9 +44,6 @@
         dest: "{{ image_cache_file }}"
         checksum: "{{ image_checksum }}"
       when: not _image_cache_file_stat.stat.exists
-
-    - name: Update the cache
-      command: "virt-customize -m 1024 -a {{ image_cache_file }} --update"
 
     - name: Customize the image for zuul ci
       block:
@@ -123,11 +102,44 @@
               Subsystem sftp  /usr/libexec/openssh/sftp-server
             dest: "{{ image_tmp_dir }}/sshd_config"
 
+        - name: Setup docker
+          copy:
+            content: |
+              deb [arch=amd64] http://download.docker.com/linux/debian stretch stable
+            dest: "{{ image_tmp_dir }}/docker.list"
+
+        - name: Download docker gpg key
+          get_url:
+             url: https://download.docker.com/linux/debian/gpg
+             dest: "{{ image_tmp_dir }}/docker.gpg"
+
+        - name: Install APT https transport
+          command: >-
+            virt-customize -m 1024 -a {{ image_file }}
+            {# Update APT Cache #}
+            --update
+            --install apt-transport-https,ca-certificates,gnupg2,curl
+
+        - name: Configure APT
+          command: >-
+            virt-customize -m 1024 -a {{ image_file }}
+            {# Setup docker #}
+            --copy-in '{{ image_tmp_dir }}/docker.list:/etc/apt/sources.list.d/'
+            --copy-in '{{ image_tmp_dir }}/docker.gpg:/tmp/'
+            --run-command 'apt-key add /tmp/docker.gpg'
+
+        - name: APT Update
+          command: >-
+            virt-customize -m 1024 -a {{ image_file }}
+            {# Update APT Cache #}
+            --update
+
         - name: Customize the image
           command: >-
             virt-customize -m 1024 -a {{ image_file }}
             {# Ensure zuul user exists #}
-            --run-command 'adduser -m zuul-worker'
+            --run-command 'useradd -m zuul-worker -s /bin/bash'
+            --run-command 'sed -i "s/zuul-worker:\!:/zuul-worker:*:/" /etc/shadow'
             {# Setup authorized_keys #}
             --mkdir '/home/zuul-worker/.ssh'
             --chmod '0700:/home/zuul-worker/.ssh'
