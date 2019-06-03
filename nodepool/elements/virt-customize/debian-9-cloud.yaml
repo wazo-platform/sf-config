@@ -69,7 +69,8 @@
             content: |
               Defaults    !requiretty
               zuul-worker ALL=(ALL) NOPASSWD:ALL
-            dest: "{{ image_tmp_dir }}/zuul-worker"
+              zuul ALL=(ALL) NOPASSWD:ALL
+            dest: "{{ image_tmp_dir }}/zuul"
 
         - name: Prepare the authorized_keys file
           copy:
@@ -146,9 +147,12 @@
             --copy-in '{{ image_tmp_dir }}/authorized_keys:/home/zuul-worker/.ssh/'
             --chmod '0600:/home/zuul-worker/.ssh/authorized_keys'
             --run-command 'chown -R zuul-worker:zuul-worker /home/zuul-worker/.ssh/'
+            {# Ensure user's private bin path #}
+            --append-line '/home/zuul-worker/.profile:PATH="$HOME/.local/bin:$PATH"'
+            --mkdir '/home/zuul-worker/.local/bin'
             {# Setup sudoers file #}
-            --copy-in '{{ image_tmp_dir }}/zuul-worker:/etc/sudoers.d/'
-            --chmod '0440:/etc/sudoers.d/zuul-worker'
+            --copy-in '{{ image_tmp_dir }}/zuul:/etc/sudoers.d/'
+            --chmod '0440:/etc/sudoers.d/zuul'
             {# Setup sshd_config file #}
             --copy-in '{{ image_tmp_dir }}/sshd_config:/etc/ssh/'
             --chmod '0600:/etc/ssh/sshd_config'
