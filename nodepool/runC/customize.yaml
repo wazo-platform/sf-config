@@ -1,5 +1,5 @@
 ---
-- include_tasks: debian-rootfs.yaml
+- include_tasks: debian-stretch-rootfs.yaml
 - include_tasks: debian-buster-rootfs.yaml
 
 # Tasks in that files are executed on the hypervisor-oci node by the config-update
