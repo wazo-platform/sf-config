@@ -138,17 +138,19 @@
         - name: Customize the image
           command: >-
             virt-customize -m 1024 -a {{ image_file }}
-            {# Ensure zuul user exists #}
-            --run-command 'useradd -m zuul-worker -s /bin/bash'
+            {# Install extra packages #}
+            --install '{{ extra_packages | join(',') }}'
+            --run-command 'pip install tox'
+            {# Ensure zuul-worker user exists #}
+            --run-command 'useradd -m zuul-worker -G docker -s /bin/bash'
             --run-command 'sed -i "s/zuul-worker:\!:/zuul-worker:*:/" /etc/shadow'
             {# Setup authorized_keys #}
             --mkdir '/home/zuul-worker/.ssh'
             --chmod '0700:/home/zuul-worker/.ssh'
             --copy-in '{{ image_tmp_dir }}/authorized_keys:/home/zuul-worker/.ssh/'
             --chmod '0600:/home/zuul-worker/.ssh/authorized_keys'
-            --run-command 'chown -R zuul-worker:zuul-worker /home/zuul-worker/.ssh/'
-            {# Ensure user's private bin path #}
-            --append-line '/home/zuul-worker/.profile:PATH="$HOME/.local/bin:$PATH"'
+            {# Ensure user private bin path #}
+            --append-line '/home/zuul-worker/.profile:PATH="/home/zuul-worker/.local/bin:$PATH"'
             --mkdir '/home/zuul-worker/.local/bin'
             {# Setup sudoers file #}
             --copy-in '{{ image_tmp_dir }}/zuul:/etc/sudoers.d/'
@@ -156,11 +158,11 @@
             {# Setup sshd_config file #}
             --copy-in '{{ image_tmp_dir }}/sshd_config:/etc/ssh/'
             --chmod '0600:/etc/ssh/sshd_config'
-            {# Install extra packages #}
-            --install '{{ extra_packages | join(',') }}'
             {# Disable IPv6 because rdo-cloud does not route v6 #}
             --append-line '/etc/sysctl.conf:net.ipv6.conf.all.disable_ipv6 = 1'
             --append-line '/etc/sysctl.conf:net.ipv6.conf.default.disable_ipv6 = 1'
+            {# Ensure zuul-worker files are owned by zuul-worker #}
+            --run-command 'chown -R zuul-worker:zuul-worker /home/zuul-worker'
 
         - name: Create raw file
           command: "qemu-img convert -O raw {{ image_file }} {{ image_output }}.raw"
