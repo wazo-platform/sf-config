@@ -30,15 +30,15 @@
 #            min-ram: 1024
 #            diskimage: dib-centos-7
 diskimages:
-  - name: debian-9-cloud
-    pause: False
-    rebuild-age: 86400
-    elements:
-      - debian-9-cloud
-      - nodepool-minimal
-      - sf-zuul-worker
-    release: stretch
+  - name: debian-9-image
     username: zuul-worker
+    elements:
+      # This is a fake element to reference the playbook
+      - debian-9-cloud
+    env-vars:
+      PATH: /etc/nodepool/elements/virt-customize:/bin:/sbin:/usr/bin:/usr/sbin
+    formats:
+      - qcow2
 
 providers:
   - name: openstack
@@ -55,19 +55,17 @@ providers:
         labels:
           - name: debian9-vm
             flavor-name: m1.small
-            diskimage: debian-9-cloud
-            #key-name: zuulkey
-            #cloud-image: debian9
+            diskimage: debian-9-image
 
 labels:
   - name: debian9-vm
-    min-ready: 0
+    min-ready: 1
 
 extra-labels:
   - provider: openstack
     pool: main
     diskimages:
-      - name: debian-9-cloud
+      - name: debian-9-image
     #cloud-images:
     #  - name: debian9
     #    image-id: 2f7a3f33-34b2-4278-a914-bb4ce8f461a3
