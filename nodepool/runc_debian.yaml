@@ -2,7 +2,9 @@
 
 labels:
   - name: runc-debian
-    min-ready: 2
+    min-ready: 1
+  - name: runc-debian-buster
+    min-ready: 1
 
 providers:
   - name: managed-runc-provider
@@ -14,4 +16,6 @@ providers:
           - name: runc-debian
             username: zuul-worker
             path: /srv/stretch
-
+          - name: runc-debian-buster
+            username: zuul-worker
+            path: /srv/buster
