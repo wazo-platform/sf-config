@@ -5,7 +5,7 @@ resources:
     local:
       description: "The local tenant."
       url: "https://zuul.wazo.community/manage"
-      default-connection: local-git
+      default-connection: github.com
 
   connections:
     github.com:
@@ -22,10 +22,10 @@ resources:
       tenant: local
       description: Internal configuration project
       source-repositories:
-        - config:
+        - wazo-pbx/sf-config:
             zuul/config-project: True
-        - sf-jobs
+        - wazo-pbx/sf-jobs
         - zuul-jobs:
             connection: local-git
             zuul/include: [job]
-            zuul/shadow: sf-jobs
+            zuul/shadow: wazo-pbx/sf-jobs

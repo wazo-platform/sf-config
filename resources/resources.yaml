@@ -13,10 +13,3 @@ resources:
     config-core:
       description: Team core for the config repo
       members: []
-  projects:
-    wazo-platform:
-      description: "Wazo Platform"
-      connection: github.com
-      source-repositories:
-        - wazo-pbx/test-repo
-        - wazo-pbx/wazo-webhookd
