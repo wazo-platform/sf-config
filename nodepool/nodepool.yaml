@@ -17,6 +17,9 @@ providers:
     image-name-format: '{image_name}-{timestamp}'
     boot-timeout: 120
     rate: 10.0
+    diskimages:
+      - name: debian-9-image
+        config-drive: true
     pools:
       - name: main
         max-servers: 2
