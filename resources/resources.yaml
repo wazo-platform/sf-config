@@ -217,7 +217,3 @@ resources:
         - wazo-pbx/wazo-doc-tools
         - wazo-pbx/test-repo
         - wazo-pbx/wazo-confd-client
-        - wazo-pbx/sf-config:
-            zuul/exclude-unprotected-branches: true
-        - wazo-pbx/sf-jobs:
-            zuul/exclude-unprotected-branches: true

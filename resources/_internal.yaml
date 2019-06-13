@@ -24,7 +24,9 @@ resources:
       source-repositories:
         - wazo-pbx/sf-config:
             zuul/config-project: True
-        - wazo-pbx/sf-jobs
+            zuul/exclude-unprotected-branches: true
+        - wazo-pbx/sf-jobs:
+            zuul/exclude-unprotected-branches: true
         - zuul-jobs:
             connection: local-git
             zuul/include: [job]
