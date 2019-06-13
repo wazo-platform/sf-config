@@ -31,6 +31,8 @@ resources:
       source-repositories:
 """
 
+ZUUL_PROJECTS = ["wazo-pbx/sf-config", "wazo-pbx/sf-jobs"]
+
 
 def main():
     user = None
@@ -63,7 +65,7 @@ def main():
     org = g.get_organization("wazo-pbx")
     for repo in org.get_repos():
         print("Doing %s" % repo.full_name)
-        if repo.full_name in ["wazo-pbx/sf-config", "wazo-pbx/sf-jobs"]:
+        if repo.full_name in ZUUL_PROJECTS:
             zuul_configured = True
         else:
             try:
@@ -83,11 +85,12 @@ def main():
             else:
                 label.edit("mergeit", "00FF7F")
 
-        if zuul_configured:
-            f.write("        - %s:\n" % repo.full_name)
-            f.write("            zuul/exclude-unprotected-branches: true\n")
-        else:
-            f.write("        - %s\n" % repo.full_name)
+        if repo.full_name not in ZUUL_PROJECTS:
+            if zuul_configured:
+                f.write("        - %s:\n" % repo.full_name)
+                f.write("            zuul/exclude-unprotected-branches: true\n")
+            else:
+                f.write("        - %s\n" % repo.full_name)
 
     f.close()
 
