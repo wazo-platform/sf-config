@@ -42,9 +42,9 @@ resources:
         - wazo-pbx/wazo-platform
         - wazo-pbx/wazo-acceptance
         - wazo-pbx/xivo-acceptance-server
-        - wazo-pbx/xivo-agentd
-        - wazo-pbx/xivo-agentd-cli
-        - wazo-pbx/xivo-agentd-client
+        - wazo-pbx/wazo-agentd
+        - wazo-pbx/wazo-agentd-cli
+        - wazo-pbx/wazo-agentd-client
         - wazo-pbx/xivo-agid
         - wazo-pbx/xivo-amid
         - wazo-pbx/xivo-amid-client
