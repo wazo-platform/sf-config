@@ -96,7 +96,6 @@ resources:
         - wazo-pbx/xivo-monitoring
         - wazo-pbx/xivo-nginx
         - wazo-pbx/wazo-notebook
-        - wazo-pbx/xivo-pjsip
         - wazo-pbx/xivo-presentations
         - wazo-pbx/xivo-provd-cli
         - wazo-pbx/xivo-provd-client
