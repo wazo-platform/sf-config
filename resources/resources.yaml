@@ -57,7 +57,8 @@ resources:
         - wazo-pbx/xivo-blog
         - wazo-pbx/xivo-build-tools
         - wazo-pbx/xivo-bus
-        - wazo-pbx/wazo-call-logd
+        - wazo-pbx/wazo-call-logd:
+            zuul/exclude-unprotected-branches: true
         - wazo-pbx/xivo-certs
         - wazo-pbx/xivo-ci
         - wazo-pbx/wazo-client-qt
