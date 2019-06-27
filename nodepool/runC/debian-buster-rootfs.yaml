@@ -18,7 +18,7 @@
     {{ bwrap_command }} /bin/bash -lc "apt install -y --allow-unauthenticated gpgv"
     {{ bwrap_command }} /bin/bash -lc "rm -rf /var/lib/apt/lists/* /usr/share/dbus-1/system-services/org.freedesktop.systemd1.service.systemd"
     {{ bwrap_command }} /bin/bash -lc "apt-get update -y"
-    {{ bwrap_command }} /bin/bash -lc "apt-get install -y openssh-server sudo rsync iproute2 git python-pip python3-pip traceroute libpq-dev python2.7 libpython2.7-dev python-pkg-resources python3.7 libpython3.7-dev python3-pkg-resources python-virtualenv python3-virtualenv yamllint flake8 ansible-lint golint"
+    {{ bwrap_command }} /bin/bash -lc "apt-get install -y openssh-server yarnpkg rsync iproute2 git python-pip python3-pip traceroute libpq-dev python2.7 libpython2.7-dev python-pkg-resources python3.7 libpython3.7-dev python3-pkg-resources python-virtualenv python3-virtualenv yamllint flake8 ansible-lint golint"
     {{ bwrap_command }} /bin/bash -lc "ln -sf /usr/bin/python2.7 /usr/bin/python2"
     {{ bwrap_command }} /bin/bash -lc "pip3 install tox doc8 bashate"
     {{ bwrap_command }} /bin/bash -lc "mkdir -p /run/sshd"
@@ -40,14 +40,6 @@
   command: '{{ bwrap_command }} /bin/bash -lc "useradd -u {{ _host_uid.stdout }} -m zuul-worker -s /bin/bash && sed -i \"s/zuul-worker:!:/zuul-worker:*:/\" /etc/shadow"'
   args:
     creates: "{{ target_dir }}/home/zuul-worker"
-
-- name: Prepare the sudoers file
-  copy:
-    content: |
-      Defaults    !requiretty
-      zuul-worker ALL=(ALL) NOPASSWD:ALL
-    dest: "{{ target_dir }}/etc/sudoers.d/zuul"
-    mode: 0440
 
 - name: Create /home/zuul-worker/.ssh
   file:
