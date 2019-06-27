@@ -17,7 +17,7 @@
     nodeset:
       nodes:
         - name: container
-          label: runc-debian
+          label: runc-debian-buster
 
 - semaphore:
     name: semaphore-config-update
