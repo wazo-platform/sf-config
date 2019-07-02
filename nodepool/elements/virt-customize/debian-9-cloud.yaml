@@ -2,8 +2,8 @@
 - name: Build a debian cloud image suitable for Zuul
   hosts: localhost
   vars:
-    image_url: https://cdimage.debian.org/cdimage/openstack/current/debian-9.9.1-20190515-openstack-amd64.qcow2
-    image_checksum: "sha256:b19827e34feaddbbb3a2848a19fe1c48bc73fc884ba68bb25a8d3e08405e669d"
+    image_url: https://cdimage.debian.org/cdimage/openstack/current/debian-9.9.3-20190618-openstack-amd64.qcow2
+    image_checksum: "sha256:4ccc4748b179245a95bbb5ffd414265aece5303611852788f13750912551c09d"
     image_cache_file: "/var/cache/nodepool/debian-9.9.1-20190515-openstack-amd64.qcow2"
     image_cache_dir: "/var/cache/nodepool"
     image_tmp_dir: "/var/tmp/{{ image_output | basename }}"
@@ -27,6 +27,9 @@
       - docker-ce
       - docker-ce-cli
       - containerd.io
+      - devscripts
+      - dirmngr
+      - build-essential
   tasks:
     - name: Ensure libvirt is started
       service:
