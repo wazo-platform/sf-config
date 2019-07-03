@@ -64,6 +64,9 @@ def main():
     g = github.Github(user, password)
     org = g.get_organization("wazo-pbx")
     for repo in org.get_repos():
+        if repo.archived:
+            continue
+
         print("Doing %s" % repo.full_name)
         if repo.full_name in ZUUL_PROJECTS:
             zuul_configured = True
