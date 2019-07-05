@@ -180,7 +180,8 @@ resources:
         - wazo-pbx/wazo-auth-client
         - wazo-pbx/wazo-doc-ng
         - wazo-pbx/wazo-doc-tools
-        - wazo-pbx/test-repo
+        - wazo-pbx/test-repo:
+            zuul/exclude-unprotected-branches: true
         - wazo-pbx/wazo-confd-client
         - wazo-pbx/react-native-firebase
         - wazo-pbx/wazo-agentd-client
