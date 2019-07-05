@@ -67,7 +67,8 @@ resources:
         - wazo-pbx/xivo-consul-replicate-packaging
         - wazo-pbx/xivo-consul-template-packaging
         - wazo-pbx/wazo-calld
-        - wazo-pbx/wazo-calld-client
+        - wazo-pbx/wazo-calld-client:
+            zuul/exclude-unprotected-branches: true
         - wazo-pbx/xivo-dao
         - wazo-pbx/xivo-dbms
         - wazo-pbx/xivo-dev-ssh-pubkeys
