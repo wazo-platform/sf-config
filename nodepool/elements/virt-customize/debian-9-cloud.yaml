@@ -30,6 +30,9 @@
       - devscripts
       - dirmngr
       - build-essential
+  environment:
+    http_proxy: http://localhost:3128
+    https_proxy: http://localhost:3128
   tasks:
     - name: Ensure libvirt is started
       service:
