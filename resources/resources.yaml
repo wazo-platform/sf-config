@@ -72,7 +72,8 @@ resources:
         - wazo-pbx/xivo-dao
         - wazo-pbx/xivo-dbms
         - wazo-pbx/xivo-dev-ssh-pubkeys
-        - wazo-pbx/wazo-dird
+        - wazo-pbx/wazo-dird:
+            zuul/exclude-unprotected-branches: true
         - wazo-pbx/wazo-dird-phoned
         - wazo-pbx/xivo-dist
         - wazo-pbx/xivo-dxtora
