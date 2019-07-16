@@ -184,3 +184,4 @@ resources:
         - wazo-pbx/wazo-confd-client
         - wazo-pbx/react-native-firebase
         - wazo-pbx/wazo-agentd-client
+        - wazo-pbx/wazo-ansible
