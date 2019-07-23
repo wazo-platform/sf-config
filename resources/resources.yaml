@@ -97,7 +97,8 @@ resources:
         - wazo-pbx/xivo-provd-cli
         - wazo-pbx/xivo-provd-plugins
         - wazo-pbx/xivo-provisioning
-        - wazo-pbx/wazo-purge-db
+        - wazo-pbx/wazo-purge-db:
+            zuul/exclude-unprotected-branches: true
         - wazo-pbx/wazo-python-asterisk-ari-packaging
         - wazo-pbx/xivo-python-asynqp-packaging
         - wazo-pbx/xivo-python-celery-packaging
