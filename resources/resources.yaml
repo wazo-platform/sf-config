@@ -81,13 +81,15 @@ resources:
         - wazo-pbx/xivo-experimental
         - wazo-pbx/xivo-fetchfw
         - wazo-pbx/xivo-python-flask-cors-packaging
-        - wazo-pbx/xivo-lib-python
+        - wazo-pbx/xivo-lib-python:
+            zuul/exclude-unprotected-branches: true
         - wazo-pbx/xivo-lib-rest-client
         - wazo-pbx/wazo-libsccp
         - wazo-pbx/xivo-load-monitor
         - wazo-pbx/xivo-load-tester
         - wazo-pbx/xivo-manage-db
-        - wazo-pbx/xivo-migration-scripts
+        - wazo-pbx/xivo-migration-scripts:
+            zuul/exclude-unprotected-branches: true
         - wazo-pbx/xivo-monitoring
         - wazo-pbx/xivo-nginx
         - wazo-pbx/wazo-notebook
@@ -95,8 +97,7 @@ resources:
         - wazo-pbx/xivo-provd-cli
         - wazo-pbx/xivo-provd-plugins
         - wazo-pbx/xivo-provisioning
-        - wazo-pbx/wazo-purge-db:
-            zuul/exclude-unprotected-branches: true
+        - wazo-pbx/wazo-purge-db
         - wazo-pbx/wazo-python-asterisk-ari-packaging
         - wazo-pbx/xivo-python-asynqp-packaging
         - wazo-pbx/xivo-python-celery-packaging
@@ -180,9 +181,13 @@ resources:
         - wazo-pbx/wazo-python-hyper-packaging
         - wazo-pbx/wazo-libtestlink
         - wazo-pbx/wazo-auth-client
-        - wazo-pbx/wazo-doc-ng
-        - wazo-pbx/wazo-doc-tools
+        - wazo-pbx/wazo-doc-tools:
+            zuul/exclude-unprotected-branches: true
         - wazo-pbx/wazo-confd-client
         - wazo-pbx/react-native-firebase
         - wazo-pbx/wazo-agentd-client
-        - wazo-pbx/wazo-ansible
+        - wazo-pbx/wazo-ansible-old
+        - wazo-pbx/wazo-iso
+        - wazo-pbx/wazo-ansible:
+            zuul/exclude-unprotected-branches: true
+        - wazo-pbx/wazo-ui
