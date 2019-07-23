@@ -187,7 +187,6 @@ resources:
         - wazo-pbx/wazo-confd-client
         - wazo-pbx/react-native-firebase
         - wazo-pbx/wazo-agentd-client
-        - wazo-pbx/wazo-ansible-old
         - wazo-pbx/wazo-iso
         - wazo-pbx/wazo-ansible:
             zuul/exclude-unprotected-branches: true
