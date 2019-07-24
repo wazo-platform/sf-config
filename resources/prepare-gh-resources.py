@@ -76,32 +76,36 @@ def main():
             continue
 
         print("Doing %s" % repo.full_name)
-        if repo.full_name in ZUUL_PROJECTS:
-            zuul_configured = True
-        else:
-            try:
-                repo.get_contents("zuul.yaml")
-            except github.UnknownObjectException:
-                zuul_configured = False
-            else:
-                zuul_configured = True
 
-        if args.doit and zuul_configured:
+        if repo.full_name not in ZUUL_PROJECTS:
+            f.write("        - %s:\n" % repo.full_name)
+            f.write("            zuul/exclude-unprotected-branches: true\n")
+
+        if args.doit:
+            if repo.full_name in ZUUL_PROJECTS:
+                zuul_configured = True
+            else:
+                try:
+                    repo.get_contents("zuul.yaml")
+                except github.UnknownObjectException:
+                    zuul_configured = False
+                else:
+                    zuul_configured = True
+
             branch = repo.get_branch("master")
-            branch.edit_protection(strict=True, contexts=["local/check"])
+            if zuul_configured:
+                contexts = ["local/check"]
+            else:
+                contexts = []
+
+            branch.edit_protection(strict=True, contexts=contexts)
+
             try:
                 label = repo.get_label("mergeit")
             except github.UnknownObjectException:
                 repo.create_label("mergeit", "00FF7F")
             else:
                 label.edit("mergeit", "00FF7F")
-
-        if repo.full_name not in ZUUL_PROJECTS:
-            if zuul_configured:
-                f.write("        - %s:\n" % repo.full_name)
-                f.write("            zuul/exclude-unprotected-branches: true\n")
-            else:
-                f.write("        - %s\n" % repo.full_name)
 
     f.close()
 
