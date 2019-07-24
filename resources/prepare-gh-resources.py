@@ -33,6 +33,10 @@ resources:
 
 ZUUL_PROJECTS = ["wazo-pbx/sf-config", "wazo-pbx/sf-jobs"]
 
+ZUUL_BLACKLISTS = [
+    "wazo-pbx/react-native-firebase"
+]
+
 
 def main():
     user = None
@@ -65,6 +69,10 @@ def main():
     org = g.get_organization("wazo-pbx")
     for repo in org.get_repos():
         if repo.archived:
+            print("Ignoring %s (archived)" % repo.full_name)
+            continue
+        elif repo.full_name in ZUUL_BLACKLISTS:
+            print("Ignoring %s (blacklist)" % repo.full_name)
             continue
 
         print("Doing %s" % repo.full_name)

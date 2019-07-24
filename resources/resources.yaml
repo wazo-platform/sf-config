@@ -170,7 +170,8 @@ resources:
         - wazo-pbx/wazo-python-ldap-packaging
         - wazo-pbx/wazo-python-pyfcm-packaging
         - wazo-pbx/wazo-websocketd-client
-        - wazo-pbx/wazo-setupd
+        - wazo-pbx/wazo-setupd:
+            zuul/exclude-unprotected-branches: true
         - wazo-pbx/wazo-setupd-client
         - wazo-pbx/wazo-auth-keys
         - wazo-pbx/wazo-libsrtp-packaging
@@ -185,9 +186,3 @@ resources:
         - wazo-pbx/wazo-doc-tools:
             zuul/exclude-unprotected-branches: true
         - wazo-pbx/wazo-confd-client
-        - wazo-pbx/react-native-firebase
-        - wazo-pbx/wazo-agentd-client
-        - wazo-pbx/wazo-iso
-        - wazo-pbx/wazo-ansible:
-            zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-ui
