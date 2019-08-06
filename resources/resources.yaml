@@ -154,7 +154,7 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-pbx/xivo-monitoring:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-nginx:
+        - wazo-pbx/wazo-nginx:
             zuul/exclude-unprotected-branches: true
         - wazo-pbx/wazo-notebook:
             zuul/exclude-unprotected-branches: true
