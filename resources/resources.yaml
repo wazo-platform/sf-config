@@ -70,7 +70,7 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-pbx/wazo-agentd-cli:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-agid:
+        - wazo-pbx/wazo-agid:
             zuul/exclude-unprotected-branches: true
         - wazo-pbx/xivo-amid:
             zuul/exclude-unprotected-branches: true
