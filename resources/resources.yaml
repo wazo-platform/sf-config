@@ -336,8 +336,6 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-pbx/wazo-agentd-client:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-ansible-old:
-            zuul/exclude-unprotected-branches: true
         - wazo-pbx/wazo-iso:
             zuul/exclude-unprotected-branches: true
         - wazo-pbx/wazo-ansible:
