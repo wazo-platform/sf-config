@@ -90,7 +90,12 @@ def main():
             else:
                 contexts = []
 
-            branch.edit_protection(strict=True, contexts=contexts)
+            branch.edit_protection(
+                strict=True,
+                contexts=contexts,
+                required_approving_review_count=1,
+                dismiss_stale_reviews=True,
+            )
 
             try:
                 label = repo.get_label("mergeit")
