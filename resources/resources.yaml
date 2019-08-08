@@ -160,8 +160,6 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-pbx/xivo-presentations:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-provd-plugins:
-            zuul/exclude-unprotected-branches: true
         - wazo-pbx/wazo-purge-db:
             zuul/exclude-unprotected-branches: true
         - wazo-pbx/wazo-python-asterisk-ari-packaging:
@@ -281,6 +279,8 @@ resources:
         - wazo-pbx/wazo-provd-cli:
             zuul/exclude-unprotected-branches: true
         - wazo-pbx/wazo-provd-client:
+            zuul/exclude-unprotected-branches: true
+        - wazo-pbx/wazo-provd-plugins:
             zuul/exclude-unprotected-branches: true
         - wazo-pbx/wazo-js-sdk:
             zuul/exclude-unprotected-branches: true
