@@ -160,8 +160,6 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-pbx/xivo-presentations:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-provd-cli:
-            zuul/exclude-unprotected-branches: true
         - wazo-pbx/xivo-provd-plugins:
             zuul/exclude-unprotected-branches: true
         - wazo-pbx/wazo-purge-db:
@@ -279,6 +277,8 @@ resources:
         - wazo-pbx/wazo-dird-client:
             zuul/exclude-unprotected-branches: true
         - wazo-pbx/wazo-provd:
+            zuul/exclude-unprotected-branches: true
+        - wazo-pbx/wazo-provd-cli:
             zuul/exclude-unprotected-branches: true
         - wazo-pbx/wazo-provd-client:
             zuul/exclude-unprotected-branches: true
