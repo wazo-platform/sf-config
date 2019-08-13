@@ -15,7 +15,7 @@ providers:
         labels:
           - name: runc-debian-stretch
             username: zuul-worker
-            path: /srv/stretch
+            path: /srv/runc/stretch
           - name: runc-debian-buster
             username: zuul-worker
-            path: /srv/buster
+            path: /srv/runc/buster
