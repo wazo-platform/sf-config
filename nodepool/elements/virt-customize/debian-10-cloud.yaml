@@ -9,10 +9,10 @@
     image_tmp_dir: "/srv/nodepool/tmp/{{ image_output | basename }}"
     extra_packages:
       - openssh-server
+      - yarnpkg
       - rsync
-      - iproute
+      - iproute2
       - git
-      - virtualenv
       - python-pip
       - python3-pip
       - traceroute
@@ -20,16 +20,18 @@
       - python2.7
       - libpython2.7-dev
       - python-pkg-resources
-      - python3.5
-      - libpython3.5-dev
+      - python3.7
+      - libpython3.7-dev
       - python3-pkg-resources
-      - sudo
-      - docker-ce
-      - docker-ce-cli
-      - containerd.io
-      - devscripts
-      - dirmngr
-      - build-essential
+      - python-virtualenv
+      - python3-virtualenv
+      - yamllint
+      - flake8
+      - ansible-lint
+      - golint
+      - libldap2-dev
+      - libsasl2-dev
+      - libssl-dev
   tasks:
     - name: Ensure libvirt is started
       service:
