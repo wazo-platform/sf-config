@@ -1,4 +1,5 @@
 ---
+images-dir: /srv/nodepool/dib
 diskimages:
   - name: debian-9-image
     username: zuul-worker
