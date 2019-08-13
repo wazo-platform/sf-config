@@ -14,7 +14,7 @@
     rm -rf {{ target_dir }}
     mkdir -p {{ target_dir }}
     tar -C {{ target_dir }} -xzf {{ target_dir }}-cache/$(python -c "import json; print(json.load(open('{{ target_dir }}-cache/manifest.json'))['layers'][0]['digest'].split(':')[1])")
-    cp /etc/resolv.conf /srv/{{ debian_version }}/etc/resolv.conf
+    cp /etc/resolv.conf {{ target_dir }}/etc/resolv.conf
     {{ bwrap_command }} /bin/bash -lc "apt install -y --allow-unauthenticated gpgv"
     {{ bwrap_command }} /bin/bash -lc "rm -rf /var/lib/apt/lists/* /usr/share/dbus-1/system-services/org.freedesktop.systemd1.service.systemd"
     {{ bwrap_command }} /bin/bash -lc "apt-get update -y"
