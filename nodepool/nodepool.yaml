@@ -9,6 +9,15 @@ diskimages:
       PATH: /etc/nodepool/elements/virt-customize:/bin:/sbin:/usr/bin:/usr/sbin
     formats:
       - qcow2
+  - name: debian-10-image
+    username: zuul-worker
+    elements:
+      # This is a fake element to reference the playbook
+      - debian-10-cloud
+    env-vars:
+      PATH: /etc/nodepool/elements/virt-customize:/bin:/sbin:/usr/bin:/usr/sbin
+    formats:
+      - qcow2
 
 providers:
   - name: openstack
@@ -20,6 +29,8 @@ providers:
     diskimages:
       - name: debian-9-image
         config-drive: true
+      - name: debian-10-image
+        config-drive: true
     pools:
       - name: main
         max-servers: 2
@@ -29,7 +40,13 @@ providers:
           - name: debian9-vm
             flavor-name: m1.small
             diskimage: debian-9-image
+          - name: debian10-vm
+            flavor-name: m1.small
+            diskimage: debian-10-image
+
 
 labels:
   - name: debian9-vm
+    min-ready: 1
+  - name: debian10-vm
     min-ready: 1
