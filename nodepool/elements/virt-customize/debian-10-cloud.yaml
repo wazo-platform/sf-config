@@ -32,6 +32,14 @@
       - libldap2-dev
       - libsasl2-dev
       - libssl-dev
+      - sudo
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - devscripts
+      - dirmngr
+      - build-essential
+
   tasks:
     - name: Ensure libvirt is started
       service:
