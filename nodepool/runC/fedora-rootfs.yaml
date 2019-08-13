@@ -1,7 +1,7 @@
 - name: Set fedora version fact
   set_fact:
     fedora_version: 28
-    target_dir: /srv/f28
+    target_dir: /srv/runc/f28
 
 - name: Set bwrap command fact
   set_fact:

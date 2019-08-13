@@ -1,7 +1,7 @@
 - name: Set Debian version fact
   set_fact:
     debian_version: stretch
-    target_dir: /srv/stretch
+    target_dir: /srv/runc/stretch
 
 - name: Set bwrap command fact
   set_fact:

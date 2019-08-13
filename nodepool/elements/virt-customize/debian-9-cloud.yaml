@@ -4,9 +4,9 @@
   vars:
     image_url: https://cdimage.debian.org/cdimage/openstack/current-9/debian-9-openstack-amd64.qcow2
     image_checksum: "sha256:bba720106edd30395f3ff8ab8f9aabdab3c9947404167a4280e5c4321dadd900"
-    image_cache_file: "/var/cache/nodepool/debian-openstack-amd64.qcow2"
-    image_cache_dir: "/var/cache/nodepool"
-    image_tmp_dir: "/var/tmp/{{ image_output | basename }}"
+    image_cache_file: "/srv/nodepool/cache/debian-9-openstack-amd64.qcow2"
+    image_cache_dir: "/srv/nodepool/cache"
+    image_tmp_dir: "/srv/nodepool/tmp/{{ image_output | basename }}"
     extra_packages:
       - openssh-server
       - rsync

@@ -1,7 +1,7 @@
 - name: Set Debian version fact
   set_fact:
     debian_version: buster
-    target_dir: /srv/buster
+    target_dir: /srv/runc/buster
 
 - name: Set bwrap command fact
   set_fact:
