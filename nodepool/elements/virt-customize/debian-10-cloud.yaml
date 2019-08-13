@@ -119,7 +119,7 @@
         - name: Setup docker
           copy:
             content: |
-              deb [arch=amd64] http://download.docker.com/linux/debian buster stable
+              deb [arch=amd64] https://download.docker.com/linux/debian buster stable
             dest: "{{ image_tmp_dir }}/docker.list"
 
         - name: Download docker gpg key
