@@ -124,8 +124,6 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-pbx/wazo-dird:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-dird-phoned:
-            zuul/exclude-unprotected-branches: true
         - wazo-pbx/xivo-dist:
             zuul/exclude-unprotected-branches: true
         - wazo-pbx/xivo-dxtora:
@@ -157,6 +155,8 @@ resources:
         - wazo-pbx/wazo-nginx:
             zuul/exclude-unprotected-branches: true
         - wazo-pbx/wazo-notebook:
+            zuul/exclude-unprotected-branches: true
+        - wazo-pbx/wazo-phoned:
             zuul/exclude-unprotected-branches: true
         - wazo-pbx/xivo-presentations:
             zuul/exclude-unprotected-branches: true
