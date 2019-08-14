@@ -8,12 +8,37 @@
     path: "{{ image_cache_file }}"
   register: _image_cache_file_stat
 
-- name: Download if checksum doesn't match
+- name: Download checksums
+  get_url:
+    url: "{{ image_checksum_url }}"
+    dest: "{{ image_cache_file }}.SHA256SUMS"
+  when: _image_cache_file_stat.stat.exists
+
+- name: Verify checksum
+  shell: "grep $(basename {{ image_url }})\\$ {{ image_cache_file }}.SHA256SUMS | sha256sum -c -"
+  args:
+    chdir: "{{image_cache_dir }}"
+  ignore_errors: yes
+  when: _image_cache_file_stat.stat.exists
+  register: _image_checksum
+
+- name: Delete image if invalid
+  file:
+    path: "{{ image_cache_file }}"
+    state: absent
+  when: _image_cache_file_stat.stat.exists and (_image_checksum.rc != 0)
+
+- name: Download if checksum doesn't match or image doesn't exist
   get_url:
     url: "{{ image_url }}"
     dest: "{{ image_cache_file }}"
-    checksum: "{{ image_checksum }}"
-  when: not _image_cache_file_stat.stat.exists
+  when: (not _image_cache_file_stat.stat.exists) or (_image_checksum.rc != 0)
+
+- name: Verify checksum after download
+  shell: "grep $(basename {{ image_url }})\\$ {{ image_cache_file }}.SHA256SUMS | sha256sum -c -"
+  args:
+    chdir: "{{image_cache_dir }}"
+  when: (not _image_cache_file_stat.stat.exists) or (_image_checksum.rc != 0)
 
 - name: Customize the image for zuul ci
   block:
