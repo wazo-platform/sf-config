@@ -2,9 +2,9 @@
 - name: Build a debian 9 cloud image suitable for Zuul
   hosts: localhost
   vars:
-    image_url: https://cdimage.debian.org/cdimage/openstack/current-9/debian-9-openstack-amd64.qcow2
-    image_checksum_url: https://cdimage.debian.org/cdimage/openstack/current-9/SHA256SUMS
-    image_basename: "{{ image_url | basename }}"
+    image_url: https://cdimage.debian.org/cdimage/openstack/current-9/
+    image_checksum_url: "{{ image_url }}/SHA256SUMS"
+    image_basename: debian-9.qcow2
     image_cache_dir: "/srv/nodepool/cache"
     image_cache_file: "{{ image_cache_dir }}/{{ image_basename }}"
     image_tmp_dir: "/srv/nodepool/tmp/{{ image_basename }}"

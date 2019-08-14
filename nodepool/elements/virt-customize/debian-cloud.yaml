@@ -1,21 +1,34 @@
-- name: Ensure libvirt is started
-  service:
-    name: libvirtd
-    state: started
+- name: Download checksums
+  get_url:
+    url: "{{ image_checksum_url }}"
+    dest: "{{ image_cache_file }}.SHA256SUMS"
+
+- name: Extract image real name
+  shell: "grep -- -amd64.qcow2\\$ {{ image_cache_file }}.SHA256SUMS | sed 's/.* //'"
+  register: _image_name
+
+- debug:
+    var: _image_name
 
 - name: Check if image is already downloaded
   stat:
     path: "{{ image_cache_file }}"
   register: _image_cache_file_stat
 
-- name: Download checksums
-  get_url:
-    url: "{{ image_checksum_url }}"
-    dest: "{{ image_cache_file }}.SHA256SUMS"
+- name: Delete symlink target
+  file:
+    path: "{{ image_cache_dir }}/{{ _image_name.stdout }}"
+    state: absent
+
+- name: Create symlink for checksum to work
+  file:
+    src: "{{ image_cache_file }}"
+    dest: "{{ image_cache_dir }}/{{ _image_name.stdout }}"
+    state: link
   when: _image_cache_file_stat.stat.exists
 
 - name: Verify checksum
-  shell: "grep $(basename {{ image_url }})\\$ {{ image_cache_file }}.SHA256SUMS | sha256sum -c -"
+  shell: "grep -- -amd64.qcow2\\$ {{ image_cache_file }}.SHA256SUMS | sha256sum -c -"
   args:
     chdir: "{{image_cache_dir }}"
   ignore_errors: yes
@@ -30,15 +43,26 @@
 
 - name: Download if checksum doesn't match or image doesn't exist
   get_url:
-    url: "{{ image_url }}"
+    url: "{{ image_url }}/{{ _image_name.stdout }}"
     dest: "{{ image_cache_file }}"
   when: (not _image_cache_file_stat.stat.exists) or (_image_checksum.rc != 0)
 
+- name: Create symlink for checksum to work
+  file:
+    src: "{{ image_cache_file }}"
+    dest: "{{ image_cache_dir }}/{{ _image_name.stdout }}"
+    state: link
+
 - name: Verify checksum after download
-  shell: "grep $(basename {{ image_url }})\\$ {{ image_cache_file }}.SHA256SUMS | sha256sum -c -"
+  shell: "grep -- -amd64.qcow2\\$ {{ image_cache_file }}.SHA256SUMS | sha256sum -c -"
   args:
     chdir: "{{image_cache_dir }}"
   when: (not _image_cache_file_stat.stat.exists) or (_image_checksum.rc != 0)
+
+- name: Ensure libvirt is started
+  service:
+    name: libvirtd
+    state: started
 
 - name: Customize the image for zuul ci
   block:

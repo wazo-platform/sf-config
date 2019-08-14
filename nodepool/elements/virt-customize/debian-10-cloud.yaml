@@ -2,16 +2,15 @@
 - name: Build a debian 10 cloud image suitable for Zuul
   hosts: localhost
   vars:
-    image_url: https://cdimage.debian.org/cdimage/openstack/current/debian-10.0.2-20190721-openstack-amd64.qcow2
-    image_checksum_url: https://cdimage.debian.org/cdimage/openstack/current/SHA256SUMS
-    image_basename: "{{ image_url | basename }}"
+    image_url: https://cdimage.debian.org/cdimage/openstack/current/
+    image_checksum_url: "{{ image_url }}/SHA256SUMS"
+    image_basename: debian-10.qcow2
     image_cache_dir: "/srv/nodepool/cache"
     image_cache_file: "{{ image_cache_dir }}/{{ image_basename }}"
     image_tmp_dir: "/srv/nodepool/tmp/{{ image_basename }}"
     debian_distro: buster
     extra_packages:
       - openssh-server
-      - yarnpkg
       - rsync
       - iproute2
       - git
@@ -27,13 +26,6 @@
       - python3-pkg-resources
       - python-virtualenv
       - python3-virtualenv
-      - yamllint
-      - flake8
-      - ansible-lint
-      - golint
-      - libldap2-dev
-      - libsasl2-dev
-      - libssl-dev
       - sudo
       - docker-ce
       - docker-ce-cli
