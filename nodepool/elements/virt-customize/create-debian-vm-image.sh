@@ -114,7 +114,7 @@ size=$(($size * 130 / 100))
 
 # Create the image file
 rm -f $img
-fallocate -l $(($size * 1024 * 1024)) $img || dd if=/dev/zero of=$img count=$size bs=1M
+dd if=/dev/zero of=$img count=0 bs=1M seek=$size
 
 disk=$(losetup --show --find "$img")
 parted -s "$disk" mklabel msdos
