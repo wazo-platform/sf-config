@@ -2,36 +2,9 @@
 - name: Build a debian 9 cloud image suitable for Zuul
   hosts: localhost
   vars:
-    image_url: https://cdimage.debian.org/cdimage/openstack/current-9/
-    image_checksum_url: "{{ image_url }}/SHA256SUMS"
     image_basename: debian-9.qcow2
-    image_cache_dir: "/srv/nodepool/cache"
-    image_cache_file: "{{ image_cache_dir }}/{{ image_basename }}"
     image_tmp_dir: "/srv/nodepool/tmp/{{ image_basename }}"
     debian_distro: stretch
-    extra_packages:
-      - openssh-server
-      - rsync
-      - iproute
-      - git
-      - virtualenv
-      - python-pip
-      - python3-pip
-      - traceroute
-      - libpq-dev
-      - python2.7
-      - libpython2.7-dev
-      - python-pkg-resources
-      - python3.5
-      - libpython3.5-dev
-      - python3-pkg-resources
-      - sudo
-      - docker-ce
-      - docker-ce-cli
-      - containerd.io
-      - devscripts
-      - dirmngr
-      - build-essential
   tasks:
     - name: Include debian cloud generic tasks
       include_tasks: debian-cloud.yaml
