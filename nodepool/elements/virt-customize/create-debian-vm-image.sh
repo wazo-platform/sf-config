@@ -56,6 +56,8 @@ comp_opt=-c
 # no compression of the image in qcow2
 #comp_opt=
 
+export DEBIAN_FRONTEND=noninteractive
+
 export DEBOOTSTRAP_DIR=$dir/debootstrap
 
 if [ -r $dir/config ]; then
@@ -121,7 +123,7 @@ parted -s "$disk" mklabel msdos
 parted -s "$disk" mkpart primary $FSTYPE 32k '100%'
 parted "$disk" set 1 boot on
 
-part=/dev/mapper/$(kpartx -av $disk|cut -f3 -d' ')
+part=/dev/mapper/$(kpartx -avs $disk|cut -f3 -d' ')
 
 try=5
 while [ $try -gt 0 -a ! -b $part ]; do
@@ -161,7 +163,7 @@ EOF
 (cd $mdir/dev/; ln -sf $part $(basename $part))
 
 # install grub
-do_chroot "$mdir" grub-install --modules="ext2 xfs part_msdos xfs" --no-floppy "$disk"
+do_chroot "$mdir" grub-install --no-floppy "$disk"
 
 do_chroot "$mdir" grub-mkconfig -o /boot/grub/grub.cfg
 
