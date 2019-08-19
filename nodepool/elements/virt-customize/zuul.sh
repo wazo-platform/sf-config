@@ -90,10 +90,30 @@ EOF
 
 chmod 0440 /etc/sudoers.d/zuul
 
-cat > /etc/network/interfaces.d/auto <<EOF
+cat > /etc/network/interfaces <<EOF
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
 # The primary network interface
 allow-hotplug enp1s0
 iface enp1s0 inet dhcp
+
+# The normal eth0
+allow-hotplug eth0
+iface eth0 inet dhcp
+
+# Additional interfaces, just in case we're using
+# multiple networks
+allow-hotplug eth1
+iface eth1 inet dhcp
+
+allow-hotplug eth2
+iface eth2 inet dhcp
+
+# Set this one last, so that cloud-init or user can
+# override defaults.
+source /etc/network/interfaces.d/*
 EOF
 
 # zuul.sh ends here
