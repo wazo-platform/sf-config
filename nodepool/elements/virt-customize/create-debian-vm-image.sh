@@ -153,11 +153,6 @@ mount -t proc none "$mdir/proc"
 # Configure Grub
 uuid=$(blkid -s UUID -o value "$part")
 export grub_device_uuid=$uuid
-export grub_device=$disk
-
-cat > "$mdir"/boot/grub/device.map <<EOF
-(hd0) $disk
-EOF
 
 # hack to have a correct part dev but don't know why
 (cd $mdir/dev/; ln -sf $part $(basename $part))
@@ -166,6 +161,9 @@ EOF
 do_chroot "$mdir" grub-install --modules="ext2 xfs part_msdos" --no-floppy "$disk"
 
 do_chroot "$mdir" grub-mkconfig -o /boot/grub/grub.cfg
+
+# debug grub.cfg
+cp $mdir/boot/grub/grub.cfg ../$distro-grub.cfg || :
 
 # add / to fstab
 fs_options="errors=remount-ro,nobarrier,noatime,nodiratime"
