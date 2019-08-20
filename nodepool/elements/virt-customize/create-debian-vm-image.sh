@@ -163,7 +163,7 @@ EOF
 (cd $mdir/dev/; ln -sf $part $(basename $part))
 
 # install grub
-do_chroot "$mdir" grub-install --no-floppy "$disk"
+do_chroot "$mdir" grub-install --modules="ext2 xfs part_msdos" --no-floppy "$disk"
 
 do_chroot "$mdir" grub-mkconfig -o /boot/grub/grub.cfg
 

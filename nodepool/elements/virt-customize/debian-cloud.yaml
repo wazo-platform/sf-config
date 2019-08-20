@@ -12,7 +12,7 @@
       args:
         chdir: "{{ image_tmp_dir }}"
 
-    - name: Create qcow file
+    - name: Install qcow file
       become: yes
       command: "mv {{ debian_distro }}.qcow2 {{ image_output }}.qcow2"
       args:
