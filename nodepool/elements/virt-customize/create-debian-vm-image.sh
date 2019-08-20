@@ -162,6 +162,9 @@ do_chroot "$mdir" grub-install --modules="ext2 xfs part_msdos" --no-floppy "$dis
 
 do_chroot "$mdir" grub-mkconfig -o /boot/grub/grub.cfg
 
+# fix loopback lines
+sed -i -e '/loop/d' < $mdir/boot/grub/grub.cfg
+
 # debug grub.cfg
 cp $mdir/boot/grub/grub.cfg ../$distro-grub.cfg || :
 
