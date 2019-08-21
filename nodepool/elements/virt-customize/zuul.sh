@@ -116,4 +116,7 @@ iface eth2 inet dhcp
 source /etc/network/interfaces.d/*
 EOF
 
+# Do not manage ssh keys in cloud-init as we inject our own key
+sed -i -e '/ - ssh$/d' /etc/cloud/cloud.cfg
+
 # zuul.sh ends here
