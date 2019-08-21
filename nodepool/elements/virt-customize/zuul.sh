@@ -15,7 +15,7 @@ fi
 
 apt update -y
 
-apt install -y openssh-server sudo cloud-init cloud-initramfs-growroot cloud-utils
+apt install -y openssh-server sudo cloud-init cloud-initramfs-growroot cloud-utils haveged
 
 apt install -y apt-transport-https ca-certificates gnupg2 curl locales
 
