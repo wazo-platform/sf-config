@@ -117,6 +117,8 @@ source /etc/network/interfaces.d/*
 EOF
 
 # Do not manage ssh keys in cloud-init as we inject our own key
-sed -i -e '/ - ssh$/d' /etc/cloud/cloud.cfg
+cat > /etc/cloud/cloud.cfg.d/keep_ssh_keys.cfg <<EOF
+ssh_deletekeys: False
+EOF
 
 # zuul.sh ends here
