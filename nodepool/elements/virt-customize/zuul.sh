@@ -24,7 +24,7 @@ apt-key add /tmp/docker.gpg
 
 if [[ $(cat /etc/debian_version) =~ ^9\. ]]; then
     # debian 9
-    PKGS="rsync iproute git virtualenv python-pip python3-pip traceroute libpq-dev python2.7 libpython2.7-dev python-pkg-resources python3.5 libpython3.5-dev python3-pkg-resources sudo docker-ce docker-ce-cli containerd.io devscripts dirmngr build-essential"
+    PKGS="rsync iproute git virtualenv python-pip python3-pip traceroute libpq-dev python2.7 libpython2.7-dev python-pkg-resources python-yaml python3.5 libpython3.5-dev python3-pkg-resources sudo docker-ce docker-ce-cli containerd.io devscripts dirmngr build-essential"
     debian_distro=stretch
 else
     # debian 10
