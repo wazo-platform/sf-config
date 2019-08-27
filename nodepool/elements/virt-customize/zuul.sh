@@ -59,6 +59,7 @@ chown -R zuul-worker:zuul-worker /home/zuul-worker
 echo 'net.ipv6.conf.all.disable_ipv6 = 1' >> '/etc/sysctl.conf'
 echo 'net.ipv6.conf.default.disable_ipv6 = 1' >> '/etc/sysctl.conf'
 
+# sudo config without password
 cat > /etc/sudoers.d/zuul <<EOF
 Defaults    !requiretty
 zuul-worker ALL=(ALL) NOPASSWD:ALL
@@ -66,6 +67,11 @@ zuul ALL=(ALL) NOPASSWD:ALL
 EOF
 
 chmod 0440 /etc/sudoers.d/zuul
+
+# finalyze l10n
+. /etc/default/locale
+grep "^$LANG " /etc/locale.gen || grep "$LANG " /usr/share/i18n/SUPPORTED >> /etc/locale.gen
+locale-gen
 
 cat > /etc/network/interfaces <<EOF
 # The loopback network interface
