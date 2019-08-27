@@ -42,6 +42,8 @@ apt update -y
 
 apt install -y $PKGS
 
+locale-gen $(cat /etc/default/locale)
+
 apt upgrade -y
 
 pip install tox
