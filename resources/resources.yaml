@@ -208,7 +208,7 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-websocketd:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-platform.github.io:
+        - wazo-platform/wazo-pbx.github.io:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-keyring:
             zuul/exclude-unprotected-branches: true
