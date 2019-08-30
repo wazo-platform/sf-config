@@ -31,7 +31,7 @@ resources:
       source-repositories:
 """
 
-ZUUL_PROJECTS = ["wazo-pbx/sf-config", "wazo-pbx/sf-jobs"]
+ZUUL_PROJECTS = ["wazo-platform/sf-config", "wazo-platform/sf-jobs"]
 
 
 def main():
@@ -62,7 +62,7 @@ def main():
     f.write(HEADER)
 
     g = github.Github(user, password)
-    org = g.get_organization("wazo-pbx")
+    org = g.get_organization("wazo-platform")
     for repo in org.get_repos():
         if repo.archived:
             continue

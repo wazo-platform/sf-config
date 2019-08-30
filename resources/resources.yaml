@@ -18,327 +18,327 @@ resources:
       description: "Wazo Platform"
       connection: github.com
       source-repositories:
-        - wazo-pbx/wazo-doc:
+        - wazo-platform/wazo-doc:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/ari-py:
+        - wazo-platform/ari-py:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/asterisk:
+        - wazo-platform/asterisk:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/asterisk-moh-opsound:
+        - wazo-platform/asterisk-moh-opsound:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/bntools:
+        - wazo-platform/bntools:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/chan-test:
+        - wazo-platform/chan-test:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/dahdi-linux:
+        - wazo-platform/dahdi-linux:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/dahdi-tools:
+        - wazo-platform/dahdi-tools:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/debian-add-archive:
+        - wazo-platform/debian-add-archive:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/debian-installer:
+        - wazo-platform/debian-installer:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/debian-pxelinux:
+        - wazo-platform/debian-pxelinux:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/debian-repo-archive:
+        - wazo-platform/debian-repo-archive:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/debian-repo-main:
+        - wazo-platform/debian-repo-main:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/kvm:
+        - wazo-platform/kvm:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/libpri:
+        - wazo-platform/libpri:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/lordboard:
+        - wazo-platform/lordboard:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/pylinphonelib:
+        - wazo-platform/pylinphonelib:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/sccp-client:
+        - wazo-platform/sccp-client:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/sccpp:
+        - wazo-platform/sccpp:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/sphinx-git:
+        - wazo-platform/sphinx-git:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xgong:
+        - wazo-platform/xgong:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-platform:
+        - wazo-platform/wazo-platform:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-acceptance:
+        - wazo-platform/wazo-acceptance:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-acceptance-server:
+        - wazo-platform/xivo-acceptance-server:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-agentd:
+        - wazo-platform/wazo-agentd:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-agentd-cli:
+        - wazo-platform/wazo-agentd-cli:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-agid:
+        - wazo-platform/wazo-agid:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-amid:
+        - wazo-platform/xivo-amid:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-amid-client:
+        - wazo-platform/xivo-amid-client:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-auth:
+        - wazo-platform/wazo-auth:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-auth-example-backend:
+        - wazo-platform/wazo-auth-example-backend:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-backup:
+        - wazo-platform/xivo-backup:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-benchmark:
+        - wazo-platform/xivo-benchmark:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-blog:
+        - wazo-platform/xivo-blog:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-build-tools:
+        - wazo-platform/xivo-build-tools:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-bus:
+        - wazo-platform/xivo-bus:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-call-logd:
+        - wazo-platform/wazo-call-logd:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-certs:
+        - wazo-platform/xivo-certs:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-ci:
+        - wazo-platform/xivo-ci:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-confd:
+        - wazo-platform/wazo-confd:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-confgend:
+        - wazo-platform/xivo-confgend:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-confgend-client:
+        - wazo-platform/xivo-confgend-client:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-config:
+        - wazo-platform/xivo-config:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-consul-cli-packaging:
+        - wazo-platform/xivo-consul-cli-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-consul-packaging:
+        - wazo-platform/xivo-consul-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-consul-replicate-packaging:
+        - wazo-platform/xivo-consul-replicate-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-consul-template-packaging:
+        - wazo-platform/xivo-consul-template-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-calld:
+        - wazo-platform/wazo-calld:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-calld-client:
+        - wazo-platform/wazo-calld-client:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-dao:
+        - wazo-platform/xivo-dao:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-dbms:
+        - wazo-platform/xivo-dbms:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-dev-ssh-pubkeys:
+        - wazo-platform/xivo-dev-ssh-pubkeys:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-dird:
+        - wazo-platform/wazo-dird:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-dist:
+        - wazo-platform/xivo-dist:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-dxtora:
+        - wazo-platform/xivo-dxtora:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-dxtorc:
+        - wazo-platform/xivo-dxtorc:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-experimental:
+        - wazo-platform/xivo-experimental:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-fetchfw:
+        - wazo-platform/xivo-fetchfw:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-python-flask-cors-packaging:
+        - wazo-platform/xivo-python-flask-cors-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-lib-python:
+        - wazo-platform/xivo-lib-python:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-lib-rest-client:
+        - wazo-platform/xivo-lib-rest-client:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-libsccp:
+        - wazo-platform/wazo-libsccp:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-load-monitor:
+        - wazo-platform/xivo-load-monitor:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-load-tester:
+        - wazo-platform/xivo-load-tester:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-manage-db:
+        - wazo-platform/xivo-manage-db:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-migration-scripts:
+        - wazo-platform/xivo-migration-scripts:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-monitoring:
+        - wazo-platform/xivo-monitoring:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-nginx:
+        - wazo-platform/wazo-nginx:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-notebook:
+        - wazo-platform/wazo-notebook:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-phoned:
+        - wazo-platform/wazo-phoned:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-presentations:
+        - wazo-platform/xivo-presentations:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-purge-db:
+        - wazo-platform/wazo-purge-db:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-python-asterisk-ari-packaging:
+        - wazo-platform/wazo-python-asterisk-ari-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-python-asynqp-packaging:
+        - wazo-platform/wazo-python-asynqp-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-python-celery-packaging:
+        - wazo-platform/xivo-python-celery-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-python-cherrypy3-packaging:
+        - wazo-platform/wazo-python-cherrypy3-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-python-consul-packaging:
+        - wazo-platform/xivo-python-consul-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-python-flask-menu-packaging:
+        - wazo-platform/xivo-python-flask-menu-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-python-flask-wtf-packaging:
+        - wazo-platform/xivo-python-flask-wtf-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-python-marshmallow-packaging:
+        - wazo-platform/wazo-python-marshmallow-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-python-swaggerpy-packaging:
+        - wazo-platform/wazo-python-swaggerpy-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-python-websockets-packaging:
+        - wazo-platform/xivo-python-websockets-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-python-wsaccel-packaging:
+        - wazo-platform/wazo-python-wsaccel-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-res-freeze-check:
+        - wazo-platform/xivo-res-freeze-check:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-service:
+        - wazo-platform/wazo-service:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-sounds:
+        - wazo-platform/xivo-sounds:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-stat:
+        - wazo-platform/xivo-stat:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-swagger-doc:
+        - wazo-platform/xivo-swagger-doc:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-sync:
+        - wazo-platform/xivo-sync:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-sysconfd:
+        - wazo-platform/xivo-sysconfd:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-test-helpers:
+        - wazo-platform/xivo-test-helpers:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-tools:
+        - wazo-platform/xivo-tools:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-upgrade:
+        - wazo-platform/xivo-upgrade:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-utils:
+        - wazo-platform/xivo-utils:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-websocketd:
+        - wazo-platform/wazo-websocketd:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-pbx.github.io:
+        - wazo-platform/wazo-platform.github.io:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/xivo-keyring:
+        - wazo-platform/xivo-keyring:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-python-flask-classful-packaging:
+        - wazo-platform/wazo-python-flask-classful-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-python-flask-login-packaging:
+        - wazo-platform/wazo-python-flask-login-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-uuid:
+        - wazo-platform/wazo-uuid:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-python-flask-session-packaging:
+        - wazo-platform/wazo-python-flask-session-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-call-logd-client:
+        - wazo-platform/wazo-call-logd-client:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-plugind:
+        - wazo-platform/wazo-plugind:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/asterisk-lab:
+        - wazo-platform/asterisk-lab:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-plugind-client:
+        - wazo-platform/wazo-plugind-client:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-plugind-cli:
+        - wazo-platform/wazo-plugind-cli:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-python-cheroot-packaging:
+        - wazo-platform/wazo-python-cheroot-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-python-tempora-packaging:
+        - wazo-platform/wazo-python-tempora-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-python-portend-packaging:
+        - wazo-platform/wazo-python-portend-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-logo:
+        - wazo-platform/wazo-logo:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-webhookd:
+        - wazo-platform/wazo-webhookd:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-webhookd-client:
+        - wazo-platform/wazo-webhookd-client:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-terraform:
+        - wazo-platform/wazo-terraform:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-market:
+        - wazo-platform/wazo-market:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/denv:
+        - wazo-platform/denv:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-market-client:
+        - wazo-platform/wazo-market-client:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-res-amqp:
+        - wazo-platform/wazo-res-amqp:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-res-stasis-amqp:
+        - wazo-platform/wazo-res-stasis-amqp:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/mockserver-client-python:
+        - wazo-platform/mockserver-client-python:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-dummy-package:
+        - wazo-platform/wazo-dummy-package:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/asterisk-vanilla:
+        - wazo-platform/asterisk-vanilla:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-doc-api:
+        - wazo-platform/wazo-doc-api:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-debug:
+        - wazo-platform/wazo-debug:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/asterisk-debug:
+        - wazo-platform/asterisk-debug:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-auth-cli:
+        - wazo-platform/wazo-auth-cli:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-sdk:
+        - wazo-platform/wazo-sdk:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-python-anytree-packaging:
+        - wazo-platform/wazo-python-anytree-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-dird-client:
+        - wazo-platform/wazo-dird-client:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-provd:
+        - wazo-platform/wazo-provd:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-provd-cli:
+        - wazo-platform/wazo-provd-cli:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-provd-client:
+        - wazo-platform/wazo-provd-client:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-provd-plugins:
+        - wazo-platform/wazo-provd-plugins:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-js-sdk:
+        - wazo-platform/wazo-js-sdk:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-react-components:
+        - wazo-platform/wazo-react-components:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/debian-repo-router:
+        - wazo-platform/debian-repo-router:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-webrtc-demo:
+        - wazo-platform/wazo-webrtc-demo:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-python-jaraco.functools-packaging:
+        - wazo-platform/wazo-python-jaraco.functools-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-react-native-demo:
+        - wazo-platform/wazo-react-native-demo:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-asterisk-config:
+        - wazo-platform/wazo-asterisk-config:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-python-werkzeug-packaging:
+        - wazo-platform/wazo-python-werkzeug-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-python-ldap-packaging:
+        - wazo-platform/wazo-python-ldap-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-python-pyfcm-packaging:
+        - wazo-platform/wazo-python-pyfcm-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-websocketd-client:
+        - wazo-platform/wazo-websocketd-client:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-setupd:
+        - wazo-platform/wazo-setupd:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-setupd-client:
+        - wazo-platform/wazo-setupd-client:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-auth-keys:
+        - wazo-platform/wazo-auth-keys:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-libsrtp-packaging:
+        - wazo-platform/wazo-libsrtp-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-chatd:
+        - wazo-platform/wazo-chatd:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-chatd-client:
+        - wazo-platform/wazo-chatd-client:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/frontend-hackathon-emergency:
+        - wazo-platform/frontend-hackathon-emergency:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-python-pyapns2-packaging:
+        - wazo-platform/wazo-python-pyapns2-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-python-sqlalchemy-continuum-packaging:
+        - wazo-platform/wazo-python-sqlalchemy-continuum-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-python-hyper-packaging:
+        - wazo-platform/wazo-python-hyper-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-libtestlink:
+        - wazo-platform/wazo-libtestlink:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-auth-client:
+        - wazo-platform/wazo-auth-client:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-doc-tools:
+        - wazo-platform/wazo-doc-tools:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-confd-client:
+        - wazo-platform/wazo-confd-client:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/react-native-firebase:
+        - wazo-platform/react-native-firebase:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-agentd-client:
+        - wazo-platform/wazo-agentd-client:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-iso:
+        - wazo-platform/wazo-iso:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-ansible:
+        - wazo-platform/wazo-ansible:
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/wazo-ui:
+        - wazo-platform/wazo-ui:
             zuul/exclude-unprotected-branches: true

@@ -22,12 +22,12 @@ resources:
       tenant: local
       description: Internal configuration project
       source-repositories:
-        - wazo-pbx/sf-config:
+        - wazo-platform/sf-config:
             zuul/config-project: True
             zuul/exclude-unprotected-branches: true
-        - wazo-pbx/sf-jobs:
+        - wazo-platform/sf-jobs:
             zuul/exclude-unprotected-branches: true
         - zuul-jobs:
             connection: local-git
             zuul/include: [job]
-            zuul/shadow: wazo-pbx/sf-jobs
+            zuul/shadow: wazo-platform/sf-jobs
