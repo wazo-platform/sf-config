@@ -328,7 +328,7 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-auth-client:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-doc-tools:
+        - wazo-platform/wazo-platform.org:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-confd-client:
             zuul/exclude-unprotected-branches: true
