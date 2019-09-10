@@ -72,7 +72,7 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-agid:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/xivo-amid:
+        - wazo-platform/wazo-amid:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-amid-client:
             zuul/exclude-unprotected-branches: true
