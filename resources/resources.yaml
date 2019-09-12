@@ -124,7 +124,7 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-dird:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/xivo-dist:
+        - wazo-platform/wazo-dist:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-dxtora:
             zuul/exclude-unprotected-branches: true
