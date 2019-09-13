@@ -48,6 +48,6 @@ providers:
 
 labels:
   - name: debian9-vm
-    min-ready: 1
+    min-ready: 0
   - name: debian10-vm
     min-ready: 1
