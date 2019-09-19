@@ -100,7 +100,7 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-confgend:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/xivo-confgend-client:
+        - wazo-platform/wazo-confgend-client:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-config:
             zuul/exclude-unprotected-branches: true
