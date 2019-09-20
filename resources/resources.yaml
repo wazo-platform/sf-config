@@ -354,3 +354,15 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-dist-upgrade:
             zuul/exclude-unprotected-branches: true
+        - wazo-platform/vagrant:
+            zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-router-confd:
+            zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-router-calld:
+            zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-kamailio-config:
+            zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-rtpe-config:
+            zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-router-logd:
+            zuul/exclude-unprotected-branches: true
