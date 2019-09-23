@@ -130,7 +130,7 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-dxtora:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/xivo-dxtorc:
+        - wazo-platform/wazo-dxtorc:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-fetchfw:
             zuul/exclude-unprotected-branches: true
