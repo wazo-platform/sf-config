@@ -366,7 +366,4 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-router-logd:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/ansible-role-base:
-            zuul/exclude-unprotected-branches: true
-        - wazo-platform/ansible-playbook-bastion:
-            zuul/exclude-unprotected-branches: true
+
