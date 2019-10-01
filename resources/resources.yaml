@@ -192,7 +192,7 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-service:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/xivo-sounds:
+        - wazo-platform/wazo-sounds:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-stat:
             zuul/exclude-unprotected-branches: true
