@@ -360,10 +360,10 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-router-calld:
             zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-router-call-logd:
+            zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-kamailio-config:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-rtpe-config:
-            zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-router-logd:
             zuul/exclude-unprotected-branches: true
 
