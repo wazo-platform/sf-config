@@ -24,9 +24,7 @@ resources:
       source-repositories:
         - wazo-platform/sf-config:
             zuul/config-project: True
-            zuul/exclude-unprotected-branches: true
-        - wazo-platform/sf-jobs:
-            zuul/exclude-unprotected-branches: true
+        - wazo-platform/sf-jobs
         - zuul-jobs:
             connection: local-git
             zuul/include: [job]

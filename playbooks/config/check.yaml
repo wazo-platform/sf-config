@@ -69,7 +69,7 @@
       no_log: true
 
     - name: Check resources changes
-      command: env - /usr/bin/managesf-resources remote-validate --cache-dir {{ config_root }}/../.resources --log-output {{ config_root }}/build/resources-engine.log --remote-gateway {{ gateway_url }}
+      command: env - /usr/bin/managesf-resources remote-validate --remote-gateway {{ gateway_url }}
       args:
         chdir: "{{ config_root }}"
 
@@ -101,7 +101,7 @@
       block:
         - name: Check syntax errors in repoxplorer definition files
           command: >
-            env - repoxplorer-config-validate --config {{ config_root }}/defconf/defconf-repoxplorer.py
+            env - /opt/rh/rh-python35/root/bin/repoxplorer-config-validate --config {{ config_root }}/defconf/defconf-repoxplorer.py
           args:
             chdir: "{{ config_root }}"
       when: '"repoxplorer" in arch.roles'
