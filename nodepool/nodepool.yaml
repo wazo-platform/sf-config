@@ -34,7 +34,7 @@ providers:
         config-drive: true
     pools:
       - name: main
-        max-servers: 2
+        max-servers: 8
         networks:
           - zuul-net
         labels:
@@ -50,4 +50,4 @@ labels:
   - name: debian9-vm
     min-ready: 0
   - name: debian10-vm
-    min-ready: 1
+    min-ready: 3
