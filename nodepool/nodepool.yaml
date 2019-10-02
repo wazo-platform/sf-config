@@ -34,7 +34,7 @@ providers:
         config-drive: true
     pools:
       - name: main
-        max-servers: 8
+        max-servers: 5
         networks:
           - zuul-net
         labels:
