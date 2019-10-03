@@ -84,8 +84,6 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-benchmark:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/xivo-blog:
-            zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-build-tools:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-bus:
@@ -212,8 +210,6 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-websocketd:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-pbx.github.io:
-            zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-keyring:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-python-flask-classful-packaging:
@@ -263,8 +259,6 @@ resources:
         - wazo-platform/wazo-dummy-package:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/asterisk-vanilla:
-            zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-doc-api:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-debug:
             zuul/exclude-unprotected-branches: true
@@ -360,10 +354,9 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-router-calld:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-router-call-logd:
-            zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-kamailio-config:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-rtpe-config:
             zuul/exclude-unprotected-branches: true
-
+        - wazo-platform/wazo-router-call-logd:
+            zuul/exclude-unprotected-branches: true
