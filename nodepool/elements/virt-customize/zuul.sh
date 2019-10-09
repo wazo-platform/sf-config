@@ -26,7 +26,7 @@ COMMON="libldap2-dev libsasl2-dev libssl-dev linphone-nogtk python-dev lsof"
 
 if [[ $(cat /etc/debian_version) =~ ^9\. ]]; then
     # debian 9
-    PKGS="rsync iproute git virtualenv python-pip python3-pip traceroute libpq-dev python2.7 libpython2.7-dev python-pkg-resources python-yaml python3.5 libpython3.5-dev python3-pkg-resources sudo docker-ce docker-ce-cli containerd.io devscripts dirmngr build-essential $COMMON"
+    PKGS="rsync iproute git virtualenv python-pip python3-pip traceroute libpq-dev python2.7 libpython2.7-dev python-pkg-resources python-yaml python3.7 libpython3.7-dev python3-pkg-resources sudo docker-ce docker-ce-cli containerd.io devscripts dirmngr build-essential $COMMON"
     debian_distro=stretch
 else
     # debian 10
