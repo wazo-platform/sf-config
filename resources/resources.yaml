@@ -136,7 +136,7 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-lib-python:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/xivo-lib-rest-client:
+        - wazo-platform/wazo-lib-rest-client:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-libsccp:
             zuul/exclude-unprotected-branches: true
