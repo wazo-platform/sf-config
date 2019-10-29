@@ -63,7 +63,7 @@ def main():
 
     g = github.Github(user, password)
     org = g.get_organization("wazo-platform")
-    for repo in org.get_repos():
+    for repo in org.get_repos(sort='full_name'):
         if repo.archived:
             continue
 
