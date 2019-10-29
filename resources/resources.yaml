@@ -74,7 +74,7 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-amid:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/xivo-amid-client:
+        - wazo-platform/wazo-amid-client:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-auth:
             zuul/exclude-unprotected-branches: true
