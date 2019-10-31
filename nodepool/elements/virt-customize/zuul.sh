@@ -22,15 +22,15 @@ apt install -y apt-transport-https ca-certificates gnupg2 curl locales
 curl -s https://download.docker.com/linux/debian/gpg > /tmp/docker.gpg
 apt-key add /tmp/docker.gpg
 
-COMMON="libldap2-dev libsasl2-dev libssl-dev linphone-nogtk python-dev lsof"
+COMMON="libldap2-dev libsasl2-dev libssl-dev linphone-nogtk python-dev lsof sudo docker-ce docker-ce-cli containerd.io devscripts dirmngr build-essential"
 
 if [[ $(cat /etc/debian_version) =~ ^9\. ]]; then
     # debian 9
-    PKGS="rsync iproute git virtualenv python-pip python3-pip traceroute libpq-dev python2.7 libpython2.7-dev python-pkg-resources python-yaml python3.5 libpython3.5-dev python3-pkg-resources sudo docker-ce docker-ce-cli containerd.io devscripts dirmngr build-essential $COMMON"
+    PKGS="rsync iproute git virtualenv python-pip python3-pip traceroute libpq-dev python2.7 libpython2.7-dev python-pkg-resources python-yaml python3.5 libpython3.5-dev python3-pkg-resources $COMMON"
     debian_distro=stretch
 else
     # debian 10
-    PKGS="rsync iproute2 git python-pip python3-pip traceroute libpq-dev python2.7 libpython2.7-dev python-pkg-resources python-yaml python3.7 libpython3.7-dev python3-pkg-resources python-virtualenv python3-virtualenv sudo docker-ce docker-ce-cli containerd.io devscripts dirmngr build-essential $COMMON"
+    PKGS="rsync iproute2 git python-pip python3-pip traceroute libpq-dev python2.7 libpython2.7-dev python-pkg-resources python-yaml python3.7 libpython3.7-dev python3-pkg-resources python-virtualenv python3-virtualenv docker-compose ansible $COMMON"
     debian_distro=buster
 fi
 
