@@ -30,7 +30,7 @@ if [[ $(cat /etc/debian_version) =~ ^9\. ]]; then
     debian_distro=stretch
 else
     # debian 10
-    PKGS="rsync iproute2 git python-pip python3-pip traceroute libpq-dev python2.7 libpython2.7-dev python-pkg-resources python-yaml python3.7 libpython3.7-dev python3-pkg-resources python-virtualenv python3-virtualenv docker-compose ansible $COMMON"
+    PKGS="rsync iproute2 git python-pip python3-pip traceroute libpq-dev python2.7 libpython2.7-dev python-pkg-resources python-yaml python3.7 libpython3.7-dev python3-pkg-resources python-virtualenv python3-virtualenv docker-compose ansible piuparts lintian licensecheck $COMMON"
     debian_distro=buster
 fi
 
