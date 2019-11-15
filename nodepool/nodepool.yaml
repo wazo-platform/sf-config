@@ -44,6 +44,9 @@ providers:
           - name: debian10-vm
             flavor-name: m1.small
             diskimage: debian-10-image
+          - name: debian10-vm-m2
+            flavor-name: m2.small
+            diskimage: debian-10-image
 
 
 labels:
@@ -51,3 +54,5 @@ labels:
     min-ready: 0
   - name: debian10-vm
     min-ready: 3
+  - name: debian10-vm-m2
+    min-ready: 1
