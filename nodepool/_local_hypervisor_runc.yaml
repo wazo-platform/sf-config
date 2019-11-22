@@ -8,12 +8,6 @@ providers:
   - name: managed-runc-provider
     driver: runc
     pools:
-      - name: managesf.zuul.wazo.community
-        max-servers: 10
-        labels:
-          - name: runc-centos
-            username: zuul-worker
-
       - name: containers.zuul.wazo.community
         max-servers: 10
         labels:
