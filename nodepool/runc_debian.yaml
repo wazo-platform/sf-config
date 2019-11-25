@@ -1,16 +1,14 @@
-# This file is managed by sfconfig, do not edit manually
-
 labels:
   - name: runc-debian-stretch
-    min-ready: 1
+    min-ready: 0
   - name: runc-debian-buster
-    min-ready: 1
+    min-ready: 3
 
 providers:
   - name: managed-runc-provider
     driver: runc
     pools:
-      - name: managesf.zuul.wazo.community
+      - name: containers.zuul.wazo.community
         max-servers: 10
         labels:
           - name: runc-debian-stretch
