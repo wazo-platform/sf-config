@@ -73,6 +73,11 @@ chmod 0440 /etc/sudoers.d/zuul
 grep "^$LANG " /etc/locale.gen || grep "$LANG " /usr/share/i18n/SUPPORTED >> /etc/locale.gen
 locale-gen
 
+# set MTU for docker
+cat /etc/docker/daemon.json <<EOF
+{"mtu": 1492}
+EOF
+
 cat > /etc/network/interfaces <<EOF
 # The loopback network interface
 auto lo
