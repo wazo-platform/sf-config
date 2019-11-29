@@ -92,6 +92,8 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-asterisk-config:
             zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-asterisk-extra-modules:
+            zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-auth:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-auth-cli:
@@ -105,6 +107,8 @@ resources:
         - wazo-platform/wazo-c4:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-c4-carrier:
+            zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-c4-helm:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-c4-router:
             zuul/exclude-unprotected-branches: true
@@ -163,6 +167,8 @@ resources:
         - wazo-platform/wazo-libsrtp-packaging:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-libtestlink:
+            zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-log-tracer:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-logo:
             zuul/exclude-unprotected-branches: true
