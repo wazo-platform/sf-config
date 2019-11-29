@@ -74,7 +74,8 @@ grep "^$LANG " /etc/locale.gen || grep "$LANG " /usr/share/i18n/SUPPORTED >> /et
 locale-gen
 
 # set MTU for docker
-cat /etc/docker/daemon.json <<EOF
+mkdir -p /etc/docker
+cat > /etc/docker/daemon.json <<EOF
 {"mtu": 1492}
 EOF
 
