@@ -37,7 +37,12 @@
   register: _host_uid
 
 - name: Create zuul-worker user
-  command: '{{ bwrap_command }} /bin/bash -lc "useradd -u {{ _host_uid.stdout }} -m zuul-worker -s /bin/bash && sed -i \"s/zuul-worker:!:/zuul-worker:*:/\" /etc/shadow"'
+  command: "{{ bwrap_command }} useradd -u {{ _host_uid.stdout }} -m zuul-worker -s /bin/bash"
+  args:
+    creates: "{{ target_dir }}/home/zuul-worker"
+
+- name: Allow zuul-worker to login
+  command: "{{ bwrap_command }} sed -i -e 's/zuul-worker:!:/zuul-worker:*:/' /etc/shadow"
   args:
     creates: "{{ target_dir }}/home/zuul-worker"
 
