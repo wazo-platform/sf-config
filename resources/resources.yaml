@@ -52,6 +52,8 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/frontend-hackathon-emergency:
             zuul/exclude-unprotected-branches: true
+        - wazo-platform/kamailio-packaging:
+            zuul/exclude-unprotected-branches: true
         - wazo-platform/kvm:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/libpri:
