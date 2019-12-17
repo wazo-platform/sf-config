@@ -44,6 +44,11 @@ providers:
           - name: debian10-vm
             flavor-name: m1.small
             diskimage: debian-10-image
+      - name: big
+        max-servers: 1
+        networks:
+          - zuul-net
+        labels:
           - name: debian10-vm-m2
             flavor-name: m2.small
             diskimage: debian-10-image
@@ -55,4 +60,4 @@ labels:
   - name: debian10-vm
     min-ready: 3
   - name: debian10-vm-m2
-    min-ready: 1
+    min-ready: 0
