@@ -48,6 +48,7 @@
         merge: true
         comment: true
         review: 'approve'
+        review-body: ''
       sqlreporter:
     failure:
       github.com:
