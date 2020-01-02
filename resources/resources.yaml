@@ -52,8 +52,6 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/frontend-hackathon-emergency:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-kamailio-packaging:
-            zuul/exclude-unprotected-branches: true
         - wazo-platform/kvm:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/libpri:
@@ -138,6 +136,8 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-consul-config:
             zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-consul-template-packaging:
+            zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-debug:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-dird:
@@ -160,7 +160,7 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-js-sdk:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-kamailio-config:
+        - wazo-platform/wazo-kamailio-packaging:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-lib-rest-client:
             zuul/exclude-unprotected-branches: true
