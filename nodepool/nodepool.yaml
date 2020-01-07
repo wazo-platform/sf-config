@@ -44,6 +44,8 @@ providers:
           - name: debian10-vm
             flavor-name: m1.small
             diskimage: debian-10-image
+        availability-zones:
+          - nova
       - name: big
         max-servers: 1
         networks:
@@ -52,7 +54,8 @@ providers:
           - name: debian10-vm-m2
             flavor-name: m2.small
             diskimage: debian-10-image
-
+        availability-zones:
+          - nova
 
 labels:
   - name: debian9-vm
