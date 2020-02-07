@@ -90,6 +90,8 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-ansible:
             zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-archive-keyring:
+            zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-asterisk-config:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-asterisk-doc-extractor:
@@ -337,8 +339,6 @@ resources:
         - wazo-platform/xivo-dev-ssh-pubkeys:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-fetchfw:
-            zuul/exclude-unprotected-branches: true
-        - wazo-platform/xivo-keyring:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-lib-python:
             zuul/exclude-unprotected-branches: true
