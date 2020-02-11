@@ -92,6 +92,8 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-asterisk-config:
             zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-asterisk-doc-extractor:
+            zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-asterisk-extra-modules:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-auth:
