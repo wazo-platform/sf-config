@@ -60,6 +60,8 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/mockserver-client-python:
             zuul/exclude-unprotected-branches: true
+        - wazo-platform/nginx-ssl:
+            zuul/exclude-unprotected-branches: true
         - wazo-platform/pylinphonelib:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/react-native-firebase:
@@ -89,6 +91,8 @@ resources:
         - wazo-platform/wazo-amid-client:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-ansible:
+            zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-applicationsd:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-archive-keyring:
             zuul/exclude-unprotected-branches: true
@@ -159,8 +163,6 @@ resources:
         - wazo-platform/wazo-dxtora:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-dxtorc:
-            zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-iso:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-js-sdk:
             zuul/exclude-unprotected-branches: true
