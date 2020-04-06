@@ -154,8 +154,6 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-dist-upgrade:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-doc:
-            zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-dummy-package:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-dxtora:
@@ -211,8 +209,6 @@ resources:
         - wazo-platform/wazo-provd-plugins:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-purge-db:
-            zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-python-anytree-packaging:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-python-asterisk-ari-packaging:
             zuul/exclude-unprotected-branches: true
@@ -273,6 +269,12 @@ resources:
         - wazo-platform/wazo-react-native-demo:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-res-amqp:
+            zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-res-consul:
+            zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-res-consul-discovery:
+            zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-res-consul-stasis-app:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-res-stasis-amqp:
             zuul/exclude-unprotected-branches: true
@@ -349,8 +351,6 @@ resources:
         - wazo-platform/xivo-load-tester:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-manage-db:
-            zuul/exclude-unprotected-branches: true
-        - wazo-platform/xivo-migration-scripts:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-monitoring:
             zuul/exclude-unprotected-branches: true
