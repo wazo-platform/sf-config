@@ -380,3 +380,5 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-utils:
             zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-python-starlette-exporter-packaging:
+            zuul/exclude-unprotected-branches: true
