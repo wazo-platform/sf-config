@@ -72,8 +72,6 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/sccpp:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/sphinx-git:
-            zuul/exclude-unprotected-branches: true
         - wazo-platform/vagrant:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-acceptance:
@@ -92,7 +90,7 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-ansible:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-applicationsd:
+        - wazo-platform/wazo-applicationd:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-asterisk-config:
             zuul/exclude-unprotected-branches: true
@@ -155,6 +153,8 @@ resources:
         - wazo-platform/wazo-dist-upgrade:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-dummy-package:
+            zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-dummy-plugin:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-dxtora:
             zuul/exclude-unprotected-branches: true
@@ -222,6 +222,8 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-python-flask-classful-packaging:
             zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-python-flask-graphql-packaging:
+            zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-python-flask-session-packaging:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-python-graphene-packaging:
@@ -229,6 +231,8 @@ resources:
         - wazo-platform/wazo-python-graphql-core-packaging:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-python-graphql-relay-packaging:
+            zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-python-graphql-server-core-packaging:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-python-hstspreload-packaging:
             zuul/exclude-unprotected-branches: true
@@ -252,7 +256,11 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-python-rfc3986-packaging:
             zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-python-rx-packaging:
+            zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-python-sqlalchemy-continuum-packaging:
+            zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-python-starlette-exporter-packaging:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-python-starlette-packaging:
             zuul/exclude-unprotected-branches: true
@@ -356,8 +364,6 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-presentations:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/xivo-python-celery-packaging:
-            zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-python-consul-packaging:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-python-flask-menu-packaging:
@@ -379,6 +385,4 @@ resources:
         - wazo-platform/xivo-upgrade:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-utils:
-            zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-python-starlette-exporter-packaging:
             zuul/exclude-unprotected-branches: true
