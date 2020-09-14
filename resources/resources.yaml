@@ -366,7 +366,7 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-python-consul-packaging:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/xivo-python-flask-menu-packaging:
+        - wazo-platform/wazo-python-flask-menu-packaging:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-res-freeze-check:
             zuul/exclude-unprotected-branches: true
