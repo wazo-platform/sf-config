@@ -92,6 +92,8 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-applicationd:
             zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-asterisk-cli:
+            zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-asterisk-config:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-asterisk-doc-extractor:
@@ -223,6 +225,8 @@ resources:
         - wazo-platform/wazo-python-flask-classful-packaging:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-python-flask-graphql-packaging:
+            zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-python-flask-menu-packaging:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-python-flask-session-packaging:
             zuul/exclude-unprotected-branches: true
@@ -365,8 +369,6 @@ resources:
         - wazo-platform/xivo-presentations:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-python-consul-packaging:
-            zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-python-flask-menu-packaging:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-res-freeze-check:
             zuul/exclude-unprotected-branches: true
