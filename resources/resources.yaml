@@ -308,6 +308,8 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-sounds:
             zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-stat:
+            zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-terraform:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-tester:
@@ -371,8 +373,6 @@ resources:
         - wazo-platform/xivo-python-consul-packaging:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-res-freeze-check:
-            zuul/exclude-unprotected-branches: true
-        - wazo-platform/xivo-stat:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/xivo-swagger-doc:
             zuul/exclude-unprotected-branches: true
