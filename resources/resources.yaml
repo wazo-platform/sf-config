@@ -34,8 +34,6 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/chan-test:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/consul-c:
-            zuul/exclude-unprotected-branches: true
         - wazo-platform/dahdi-linux:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/dahdi-tools:
@@ -55,6 +53,8 @@ resources:
         - wazo-platform/frontend-hackathon-emergency:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/kvm:
+            zuul/exclude-unprotected-branches: true
+        - wazo-platform/libconsul-c:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/libpri:
             zuul/exclude-unprotected-branches: true
