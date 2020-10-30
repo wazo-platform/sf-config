@@ -28,6 +28,8 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/asterisk-moh-opsound:
             zuul/exclude-unprotected-branches: true
+        - wazo-platform/asterisk-scale-poc:
+            zuul/exclude-unprotected-branches: true
         - wazo-platform/asterisk-vanilla:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/bntools:
@@ -94,6 +96,8 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-applicationd:
             zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-applicationd-client:
+            zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-asterisk-cli:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-asterisk-config:
@@ -101,6 +105,8 @@ resources:
         - wazo-platform/wazo-asterisk-doc-extractor:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-asterisk-extra-modules:
+            zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-asyncio-ari-client:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-auth:
             zuul/exclude-unprotected-branches: true
@@ -213,6 +219,8 @@ resources:
         - wazo-platform/wazo-provd-plugins:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-purge-db:
+            zuul/exclude-unprotected-branches: true
+        - wazo-platform/wazo-python-amqp-packaging:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-python-asterisk-ari-packaging:
             zuul/exclude-unprotected-branches: true
