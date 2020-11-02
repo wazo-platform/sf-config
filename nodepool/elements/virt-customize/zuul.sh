@@ -7,6 +7,7 @@ set -e
 if [ $# == 1 ]; then
     dir="$1"
     cp /var/lib/nodepool/.ssh/zuul_rsa.pub "$dir/tmp/authorized_keys"
+    cp /var/lib/nodepool/docker-creds.json "$dir/tmp/docker-creds.json"
     cp $0 $dir/tmp/custom
     exec chroot "$dir" /tmp/custom
 fi
@@ -48,10 +49,16 @@ pip install tox
 
 useradd -m zuul-worker -G docker -s /bin/bash
 sed -i "s/zuul-worker:\!:/zuul-worker:*:/" /etc/shadow
+
 mkdir /home/zuul-worker/.ssh
 chmod 0700 /home/zuul-worker/.ssh
 cp /tmp/authorized_keys /home/zuul-worker/.ssh/
 chmod 0600 /home/zuul-worker/.ssh/authorized_keys
+
+mkdir /home/zuul-worker/.docker
+cp /tmp/docker-creds.json /home/zuul-worker/.docker/config.json
+chmod 0600 /home/zuul-worker/.docker/config.json
+
 echo 'PATH="/home/zuul-worker/.local/bin:$PATH"' >> /home/zuul-worker/.profile
 mkdir -p /home/zuul-worker/.local/bin
 chown -R zuul-worker:zuul-worker /home/zuul-worker
