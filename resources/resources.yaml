@@ -324,8 +324,6 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-stat:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-sysconfd-client:
-            zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-terraform:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-tester:
