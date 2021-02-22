@@ -11,7 +11,7 @@ resources:
     github.com:
       base-url: "https://github.com"
       type: github
-      github-app-name: wazo-production-zuul
+      github-app-name: wazo-zuul
       github-label: mergeit
     local-git:
       base-url: "file:///var/lib/software-factory/git"
