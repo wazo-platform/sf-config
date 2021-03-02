@@ -23,7 +23,7 @@ apt install -y apt-transport-https ca-certificates gnupg2 curl locales
 curl -s https://download.docker.com/linux/debian/gpg > /tmp/docker.gpg
 apt-key add /tmp/docker.gpg
 
-COMMON="libldap2-dev libsasl2-dev libssl-dev linphone-nogtk python-dev lsof sudo docker-ce=5:20.10.3~3-0~debian-buster docker-ce-cli containerd.io devscripts dirmngr build-essential"
+COMMON="libldap2-dev libsasl2-dev libssl-dev linphone-nogtk python-dev lsof sudo docker-ce=5:20.10.3~3-0~debian-buster docker-ce-cli=5:20.10.3~3-0~debian-buster containerd.io devscripts dirmngr build-essential"
 
 if [[ $(cat /etc/debian_version) =~ ^9\. ]]; then
     # debian 9
@@ -42,7 +42,7 @@ EOF
 apt update -y
 
 apt install -y $PKGS
-apt-mark hold docker-ce
+apt-mark hold docker-ce docker-ce-cli
 
 apt upgrade -y
 
