@@ -42,6 +42,7 @@ EOF
 apt update -y
 
 apt install -y $PKGS
+apt-mark hold docker-ce
 
 apt upgrade -y
 
