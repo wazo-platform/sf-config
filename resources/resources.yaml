@@ -118,16 +118,6 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-auth-keys:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-c4:
-            zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-c4-carrier:
-            zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-c4-helm:
-            zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-c4-router:
-            zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-c4-sbc:
-            zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-call-logd:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-call-logd-client:
