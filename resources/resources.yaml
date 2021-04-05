@@ -218,8 +218,6 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-provd-client:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-provd-plugins:
-            zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-purge-db:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-python-amqp-packaging:
