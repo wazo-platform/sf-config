@@ -184,8 +184,6 @@ resources:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-market-client:
             zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-ngcp-rtpengine-packaging:
-            zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-nginx:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-notebook:
@@ -291,14 +289,6 @@ resources:
         - wazo-platform/wazo-res-consul-stasis-app:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-res-stasis-amqp:
-            zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-router-call-logd:
-            zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-router-calld:
-            zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-router-confd:
-            zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-rtpe-config:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/wazo-sdk:
             zuul/exclude-unprotected-branches: true
