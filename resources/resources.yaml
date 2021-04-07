@@ -18,6 +18,10 @@ resources:
       description: "Wazo Platform"
       connection: github.com
       source-repositories:
+        - wazo-platform/ari-py:
+            zuul/exclude-unprotected-branches: true
+        - wazo-platform/asterisk:
+            zuul/exclude-unprotected-branches: true
         - wazo-platform/asterisk-debug:
             zuul/exclude-unprotected-branches: true
         - wazo-platform/asterisk-lab:
