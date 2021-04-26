@@ -162,8 +162,8 @@ resources:
         #     zuul/exclude-unprotected-branches: true
         # - wazo-platform/wazo-dev-ssh-pubkeys:
         #     zuul/exclude-unprotected-branches: true
-        - wazo-platform/wazo-dird:
-            zuul/exclude-unprotected-branches: true
+        # - wazo-platform/wazo-dird:
+        #     zuul/exclude-unprotected-branches: true
         # - wazo-platform/wazo-dird-client:
         #     zuul/exclude-unprotected-branches: true
         # - wazo-platform/wazo-dist:
